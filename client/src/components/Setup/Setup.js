@@ -26,6 +26,8 @@ import Users from './Users/Users';
 import EditUser from './Users/EditUser';
 
 import './Setup.css';
+import Schedule from './Schedule';
+import CreateSchedule from './Schedule/CreateSchedule';
 
 // Placeholder components for each setup section
 const Paths = () => <div>Paths Content</div>;
@@ -33,7 +35,7 @@ const PathGuides = () => <div>Path Guides Content</div>;
 
 const Setup = ({ isNavOpen }) => {
   return (
-    <div className={`setup-container ${isNavOpen ? 'nav-expanded' : ''}`}>
+    <div className={`setup-container ${isNavOpen ? "nav-expanded" : ""}`}>
       <SetupNav isNavOpen={isNavOpen} />
       <div className="setup-content">
         <Routes>
@@ -64,6 +66,8 @@ const Setup = ({ isNavOpen }) => {
           <Route path="maps/create/sites" element={<Sites />} />
           <Route path="sites/create" element={<CreateSite />} />
           <Route path="sites/edit/:id" element={<EditSite />} />
+          <Route path="schedule" element={<Schedule />} />
+          <Route path="schedule/create" element={<CreateSchedule />} />
         </Routes>
       </div>
     </div>

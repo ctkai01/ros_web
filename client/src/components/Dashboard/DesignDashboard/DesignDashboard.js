@@ -46,51 +46,94 @@ const DesignDashboard = () => {
 
   const availableWidgets = [
     {
-      id: 'map-widget-toolbar',
-      title: 'Maps',
-      type: 'map',
-      icon: 'map-toolbar-icon',
-      description: 'Interactive map view',
+      id: "map-widget-toolbar",
+      title: "Maps",
+      type: "map",
+      icon: "map-toolbar-icon",
+      description: "Interactive map view",
       dropdownOptions: [
-        { id: 'map-single', label: 'Add Map Widget', action: 'map', type: 'map' },
-        { id: 'map-locked', label: 'Add Map Locked Widget', action: 'map-locked' }
-      ]
+        {
+          id: "map-single",
+          label: "Add Map Widget",
+          action: "map",
+          type: "map",
+        },
+        {
+          id: "map-locked",
+          label: "Add Map Locked Widget",
+          action: "map-locked",
+        },
+      ],
     },
     {
-      id: 'mission-widget-toolbar',
-      title: 'Mission',
-      type: 'mission-action-log',
-      icon: 'mission-toolbar-icon',
-      description: 'Mission-related widgets',
+      id: "mission-widget-toolbar",
+      title: "Mission",
+      type: "mission-action-log",
+      icon: "mission-toolbar-icon",
+      description: "Mission-related widgets",
       dropdownOptions: [
-        { id: 'mission-action-log', label: 'Add Mission Action Log', action: 'mission-action-log' },
-        { id: 'mission-button', label: 'Add Mission Button', action: 'mission-button' },
-        { id: 'mission-button-group', label: 'Add Mission Button Group', action: 'mission-button-group' },
-        { id: 'mission-queue', label: 'Add Mission Queue', action: 'mission-queue' },
-        { id: 'pause-continue', label: 'Add Pause/Continue Button', action: 'pause-continue' }
-      ]
+        {
+          id: "mission-action-log",
+          label: "Add Mission Action Log",
+          action: "mission-action-log",
+        },
+        {
+          id: "mission-button",
+          label: "Add Mission Button",
+          action: "mission-button",
+        },
+        {
+          id: "mission-button-group",
+          label: "Add Mission Button Group",
+          action: "mission-button-group",
+        },
+        {
+          id: "mission-queue",
+          label: "Add Mission Queue",
+          action: "mission-queue",
+        },
+        {
+          id: "pause-continue",
+          label: "Add Pause/Continue Button",
+          action: "pause-continue",
+        },
+      ],
     },
     {
-      id: 'io-status',
-      title: 'I/O status',
-      type: 'io-status',
-      icon: 'io-status-toolbar-icon',
-      description: 'Input/Output status display',
+      id: "io-status",
+      title: "I/O status",
+      type: "io-status",
+      icon: "io-status-toolbar-icon",
+      description: "Input/Output status display",
       dropdownOptions: [
-        { id: 'io-basic', label: 'Add I/O Status', action: 'io-status' },
-        { id: 'io-advanced', label: 'Add Advanced I/O', action: 'io-status-advanced' }
-      ]
+        { id: "io-basic", label: "Add I/O Status", action: "io-status" },
+        {
+          id: "io-advanced",
+          label: "Add Advanced I/O",
+          action: "io-status-advanced",
+        },
+      ],
     },
     {
-      id: 'miscellaneous',
-      title: 'Miscellaneous',
-      type: 'miscellaneous',
-      icon: 'miscellaneous-toolbar-icon',
-      description: 'Other widgets',
+      id: "miscellaneous",
+      title: "Miscellaneous",
+      type: "miscellaneous",
+      icon: "miscellaneous-toolbar-icon",
+      description: "Other widgets",
       dropdownOptions: [
-        { id: 'joystick', label: 'Add Joystick', action: 'joystick' }
-      ]
-    }
+        { id: "joystick", label: "Add Joystick", action: "joystick" },
+        {
+          id: "distributor",
+          label: "Distributor",
+          action: "distributor",
+        },
+        {
+          id: "log-out-button",
+          label: "Log-out button",
+          action: "log-out-button",
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -900,6 +943,9 @@ const DesignDashboard = () => {
         break;
       case 'joystick':
         handleAddWidgetFromSidebar('joystick');
+        break;
+      case 'distributor':
+        handleAddWidgetFromSidebar('distributor');
         break;
       default:
         const widgetType = action.replace('-advanced', '').replace('-priority', '').replace('-group', '').replace('-fullwidth', '');

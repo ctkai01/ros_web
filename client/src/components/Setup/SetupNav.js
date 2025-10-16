@@ -23,14 +23,15 @@ const SetupNav = () => {
   };
 
   const menuItems = [
-    { label: 'Missions', path: '/setup/missions' },
-    { label: 'Maps', path: '/setup/maps' },
-    { label: 'Footprints', path: '/setup/footprints' }, 
-    { label: 'Transitions', path: '/setup/transitions' },
-    { label: 'Users', path: '/setup/users' },
-    { label: 'User groups', path: '/setup/user-groups' },
-    { label: 'Paths', path: '/setup/paths' },
-    { label: 'Path guides', path: '/setup/path-guides' },
+    { label: "Schedule", path: "/setup/schedule" },
+    { label: "Missions", path: "/setup/missions" },
+    { label: "Maps", path: "/setup/maps" },
+    { label: "Footprints", path: "/setup/footprints" },
+    { label: "Transitions", path: "/setup/transitions" },
+    { label: "Users", path: "/setup/users" },
+    { label: "User groups", path: "/setup/user-groups" },
+    { label: "Paths", path: "/setup/paths" },
+    { label: "Path guides", path: "/setup/path-guides" },
   ];
 
   return (
