@@ -1,0 +1,96 @@
+/* Common Navigation Styles */
+.nav-common {
+    width: 180px;
+    background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+    padding: 20px 0;
+    height: calc(100vh - 60px);
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    transition: left 0.3s ease;
+    z-index: 100;
+}
+
+.navigate-sidebar.open ~ .container .nav-common {
+    left: 100px;
+}
+
+.nav-common h2 {
+    padding: 0 20px;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+
+.nav-common nav {
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.nav-common nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav-common nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-common nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.nav-common nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-common nav li {
+    margin: 2px 0;
+}
+
+.nav-common nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(to right, #2980b9 , #90b1d3);
+    border-image-slice: 1; 
+    border-image-width: 1 0 1 0; 
+}
+
+.nav-common nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-common nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-common .arrow {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.nav-common .nav-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+.nav-common .loading-item {
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    font-size: 14px;
+}

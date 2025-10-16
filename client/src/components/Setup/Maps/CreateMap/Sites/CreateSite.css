@@ -1,0 +1,12 @@
+.create-site-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+}
+
+.create-site-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

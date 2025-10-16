@@ -1,0 +1,226 @@
+/* Error Log specific styles - using App.css classes */
+.error-log-page-container {
+    padding: 10px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.error-log-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.error-log-main-content {
+    padding: 0;
+}
+
+.error-log-list {
+    /* min-height: 400px; */
+}
+
+.error-log-no-logs {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 16px;
+    background: white;
+}
+
+/* Error Log Table Styles */
+.error-log-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    height: auto;
+    overflow: visible;
+    font-size: 13px;
+}
+
+.error-log-table th,
+.error-log-table td {
+    /* padding: 12px 16px; */
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+    font-size: 13px;
+}
+
+.error-log-table th {
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+/* Column widths */
+.error-log-table th:nth-child(1),
+.error-log-table td:nth-child(1) {
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    text-align: center;
+}
+
+.error-log-table th:nth-child(2),
+.error-log-table td:nth-child(2) {
+    width: 8%;
+    min-width: 60px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.error-log-table th:nth-child(3),
+.error-log-table td:nth-child(3) {
+    width: 18%;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.error-log-table th:nth-child(4),
+.error-log-table td:nth-child(4) {
+    width: 12%;
+    min-width: 100px;
+    max-width: 120px;
+    text-align: center;
+}
+
+.error-log-table th:nth-child(5),
+.error-log-table td:nth-child(5) {
+    width: 52%;
+    min-width: 200px;
+    max-width: none;
+    text-align: left;
+}
+
+.error-log-table th:nth-child(6),
+.error-log-table td:nth-child(6) {
+    width: 10%;
+    min-width: 100px;
+    max-width: 120px;
+    text-align: center;
+}
+
+/* Add vertical borders between columns */
+.error-log-table th:not(:last-child),
+.error-log-table td:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.error-log-table-row:hover {
+    background-color: #f8f9fa;
+}
+
+.error-log-icon-cell {
+    width: 32px;
+    text-align: center;
+}
+
+.error-log-icon-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.error-log-icon {
+    background-image: url("../../../../public/assets/icons/error_log.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.error-log-id-cell {
+    min-width: 60px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.error-log-timestamp-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.error-log-level-cell {
+    min-width: 100px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.error-log-message-cell {
+    min-width: 200px;
+    text-align: center;
+    justify-content: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.error-log-function-cell {
+    min-width: 100px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.function-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.message-content {
+    word-wrap: break-word;
+    max-width: none;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-log-page-container {
+        padding: 10px;
+    }
+
+    .error-log-table {
+        font-size: 14px;
+    }
+
+    .error-log-table th,
+    .error-log-table td {
+        /* padding: 8px 12px; */
+    }
+
+    .error-log-id-cell,
+    .error-log-timestamp-cell,
+    .error-log-level-cell,
+    .error-log-message-cell,
+    .error-log-function-cell {
+        min-width: auto;
+    }
+}

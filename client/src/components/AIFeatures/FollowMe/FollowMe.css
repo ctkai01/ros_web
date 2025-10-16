@@ -1,0 +1,190 @@
+/* Container chính bao bọc toàn bộ trang */
+.follow-me-container {
+  min-height: 100vh;
+  /* Giữ màu nền tối, nhưng có thể điều chỉnh để hài hòa hơn với xanh */
+  background-color: #f0f2f5; /* Màu xám nhạt tinh tế hơn, hoặc có thể dùng #e0f2f7 nếu muốn xanh nhạt */
+  color: #333; /* Màu chữ tối để dễ đọc trên nền sáng */
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Thẻ chứa nội dung chính */
+.capture-card {
+  width: 100%;
+  max-width: 56rem;
+  /* Đổi màu nền thẻ thành xanh đậm hoặc xám xanh để đồng bộ với sidebar */
+  /* background-color: #1a2a3a;  */
+  background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); /* Shadow đậm hơn một chút */
+  border-radius: 0.75rem; /* Tăng bo tròn góc lên một chút */
+  padding: 2rem; /* Tăng padding để có thêm không gian */
+  text-align: center;
+  border: 1px solid #007bff; /* Thêm viền xanh nhẹ để làm nổi bật */
+}
+
+.capture-card__title {
+  font-size: 2.25rem; /* text-4xl, tăng kích thước tiêu đề */
+  font-weight: 700;
+  color: #00bcd4; /* Màu xanh cyan sáng hơn, nổi bật hơn */
+  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới tiêu đề */
+}
+
+/* Nhóm form */
+.capture-card__form-group {
+  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới nhóm form */
+}
+
+.capture-card__label {
+  display: block;
+  margin-bottom: 0.75rem; /* Tăng mb-2 */
+  font-size: 1.25rem; /* Tăng text-lg */
+  font-weight: 500;
+  color: #e0f2f7; /* Màu chữ xám xanh nhạt */
+  text-align: left;
+}
+
+.capture-card__select {
+  /* background-color: #2c3e50;  */
+  border: 1px solid #007bff; /* border border-gray-600 -> đổi thành viền xanh */
+  /* color: #ffffff; */
+  font-size: 1rem; /* Tăng text-sm */
+  border-radius: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 0.75rem; /* Tăng p-2.5 */
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none; /* Dành cho Safari */
+  -moz-appearance: none; /* Dành cho Firefox */
+  appearance: none; /* Xóa kiểu mặc định của trình duyệt */
+  /* Thêm mũi tên tùy chỉnh cho select box */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem top 50%;
+  background-size: 1.5rem auto;
+}
+
+.capture-card__select:focus {
+  outline: none;
+  border-color: #00bcd4; /* focus:border-cyan-500 */
+  box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.3); /* focus:ring-cyan-500 */
+}
+
+/* Nhóm nút bấm */
+.capture-card__button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  gap: 1.25rem; /* Tăng gap */
+  margin-bottom: 2rem; /* Tăng mb-6 */
+}
+
+/* Kiểu nút cơ bản */
+.btn {
+  padding: 0.625rem 1.75rem; /* Tăng padding */
+  font-weight: 600;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.2s ease;
+  min-width: 100px; /* Đảm bảo các nút có độ rộng tối thiểu */
+}
+
+.btn:hover {
+  transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ lên khi hover */
+}
+
+/* Modifier cho màu sắc nút */
+.btn--yellow {
+  background-color: #ecb913;
+} /* Màu xanh dương tiêu chuẩn, gần màu sidebar */
+.btn--yellow:hover {
+  background-color: #b38c00;
+}
+
+.btn--green {
+  background-color: #28a745;
+} /* Giữ màu xanh lá cây nhưng có thể điều chỉnh sắc độ */
+.btn--green:hover {
+  background-color: #218838;
+}
+
+.btn--red {
+  background-color: #dc3545;
+} /* Giữ màu đỏ nhưng có thể điều chỉnh sắc độ */
+.btn--red:hover {
+  background-color: #c82333;
+}
+
+.btn--purple {
+  background-color: #6f42c1;
+} /* Màu tím hơi trầm hơn, hài hòa */
+.btn--purple:hover {
+  background-color: #5a2e98;
+}
+
+/* Nút Disabled */
+.btn:disabled {
+  background-color: #6c757d; /* Màu xám đậm hơn cho disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none; /* Không có hiệu ứng nhấc lên khi disabled */
+}
+
+/* Hiệu ứng viền (ring) */
+.ring-effect--green {
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5); /* ring với màu xanh lá */
+}
+.ring-effect--red {
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.5); /* ring với màu đỏ */
+}
+
+/* Khung video */
+.video-player {
+  background-color: #000000;
+  border-radius: 0.5rem; /* rounded-md */
+  overflow: hidden;
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3),
+    0 6px 12px -3px rgba(0, 0, 0, 0.1); /* Shadow đậm hơn */
+  border: 2px solid #00bcd4; /* Viền xanh cyan để làm nổi bật */
+}
+
+.video-player__frame {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .capture-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .capture-card__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .capture-card__label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .capture-card__select {
+    padding: 0.625rem;
+  }
+  .capture-card__button-group {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    min-width: unset; /* Xóa min-width trên màn hình nhỏ */
+  }
+}

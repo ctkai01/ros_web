@@ -1,0 +1,2565 @@
+.mission-detail-container {
+    height: calc(100vh - 60px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.mission-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.mission-detail-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.mission-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mission-edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission-edit-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mission-edit-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.mission-edit-button:hover .mission-edit-icon {
+    opacity: 1;
+}
+
+.mission-detail-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button-icon {
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Specific icon adjustments */
+.back-button .button-icon {
+    font-size: 1.2em;
+    margin-right: 2px;
+}
+
+.save-button .button-icon.save-icon {
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+
+.save-as-button .button-icon.save-as-icon {
+    font-size: 1.4em;
+    background-color: white;
+    color:  black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 2px;
+}
+
+.mission-detail-header .delete-button .button-icon.delete-icon {
+    background-image: url('../../../../public/assets/icons/delete-white.png');
+    background-color: #F44336;
+}
+
+.mission-detail-header .delete-button:hover .button-icon.delete-icon {
+    color: white;
+    opacity: 0.9;
+}
+
+.header-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-color: #999;
+}
+
+.header-button.back-button {
+    background-color: #f5f5f5;
+    color: black;
+    border-color: black;
+    border: 1px solid #ddd;
+}
+
+.back-button:hover {
+    background-color: white;
+    border-color: black;
+}
+
+.save-button {
+    background-color: #8BC34A;
+    color: white;
+    border-color: #8BC34A;
+}
+
+.save-button:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.save-as-button {
+    background-color: white;
+    color: black;
+    border-color: gray;
+}
+
+.save-as-button:hover {
+    background-color: white;
+    border-color: gray;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border-color: #c82333;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Submenu Styles */
+.submenu-container {
+    background-color: #f1f1ef;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    /* Đảm bảo không cắt bớt dropdown */
+    overflow: visible;
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f1f1ef;
+    border-radius: 8px 8px 0 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    /* Tắt containment để dropdown không bị cắt */
+    contain: none;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.submenu::-webkit-scrollbar {
+    display: none;
+}
+
+.submenu-item {
+    position: relative;
+    min-width: auto;
+    list-style: none;
+    flex-shrink: 0;
+    contain: none;
+    /* Tạo stacking context riêng cho dropdown */
+    z-index: 10;
+}
+
+.submenu-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-right: 1px solid #e0e0e0;
+    background-color: #f1f1ef;
+    user-select: none;
+}
+
+.submenu-link:hover {
+    background-color: #f0f0f0;
+}
+
+.submenu-item.active .submenu-link {
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+
+.submenu-arrow {
+    font-size: 10px;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+    color: #666;
+}
+
+.submenu-item.active .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.submenu-item.active {
+    display: block;
+}
+
+.submenu-dropdown {
+    position: fixed;
+    width: 200px;
+    background-color: #f1f1ef;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    margin-top: 0;
+    padding: 4px 0;
+    list-style: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none;
+}
+
+.submenu-dropdown.show {
+    display: block;
+    background-color: white !important;
+
+}
+
+.submenu-dropdown-item {
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Menu item icon slot */
+.runner-icon-sublink {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+/* Use mission icon for user created entries */
+.runner-icon-sublink.mission-icon {
+    background-image: url('../../../../public/assets/icons/mission.png');
+}
+
+.submenu-dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-color: #f1f1ef;
+}
+
+.submenu-dropdown-item.dragging {
+    opacity: 0.8;
+    background-color: #f0f0f0;
+}
+
+.submenu-dropdown-item .drag-handle {
+    color: #999;
+    font-size: 14px;
+    cursor: move;
+    user-select: none;
+}
+
+.submenu-dropdown-item:hover .drag-handle {
+    color: #666;
+}
+
+.submenu-dropdown-item.empty .submenu-dropdown-link {
+    color: #999;
+    font-style: italic;
+    cursor: default;
+    background-color: #fff;
+}
+
+.submenu-dropdown-item.empty .submenu-dropdown-link:hover {
+    background-color: #fff;
+    color: #999;
+}
+
+/* Submenu pagination */
+.submenu-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    border-top: 1px dashed #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.submenu-page-btn {
+    padding: 4px 8px;
+    border: 1px solid #d0d0d0;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.submenu-page-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.submenu-page-indicator {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Action Panels Container */
+.action-panels-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* overflow-y: auto; */
+    min-height: 200px;
+    height: 100%;
+    gap: 8px;
+}
+
+.action-panels-container:empty {
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-top: 16px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-panels-container:empty::before {
+    content: "Drop action here to create new panel";
+}
+
+/* Combined action-panel and draggable-panel styles */
+.action-panel.draggable-panel {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+    cursor: move;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.action-panel.draggable-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-panel.draggable-panel.dragging {
+    opacity: 0.8;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+
+.action-panel.draggable-panel.drag-over {
+    border: 2px dashed #3498db;
+    background-color: #f0f7ff;
+    transform: scale(1.01);
+}
+
+.action-panel.draggable-panel.drag-over::after {
+    content: 'Drop here to merge actions';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3498db;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng mượt khi sắp xếp */
+.action-panel.draggable-panel {
+    transition: transform 0.2s ease, margin 0.2s ease;
+  }
+
+.drag-placeholder {
+    height: 80px; /* Chiều cao giả của item, chỉnh tùy layout */
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    background-color: #f0f7ff;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+  }
+
+/* Keep original styles for backward compatibility */
+.draggable-panel {
+    cursor: move;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* .draggable-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.draggable-panel {
+    position: relative;
+}
+
+.draggable-panel.dragging {
+    z-index: 9999;
+}
+
+/* .action-panel base styles intentionally managed by specific components */
+
+.action-panel.dragging {
+    /*opacity: 0.8;
+    transform: scale(1.02);*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.action-panel.drag-over {
+    border: 2px dashed #3498db;
+    background-color: #f0f7ff;
+    transform: scale(1.01);
+}
+
+.action-panel.drag-over::after {
+    content: 'Drop here to merge actions';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3498db;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Panel Header Styles */
+.action-panel-header {
+    padding: 0px;
+    background-color: #aacbed;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Move component handles its own nav styles */
+
+/* Style for Move component */
+.move-action-header .action-copy-button,
+.move-action-header .action-settings-button {
+    width: 24px;
+    height: 24px;
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.move-action-header .action-copy-button {
+    background-image: url('../../../../public/assets/icons/copy.png');
+}
+
+.move-action-header .action-settings-button {
+    background-image: url('../../../../public/assets/icons/gear.png');
+}
+
+/* Style for Loop/nested panels */
+.nested-panel-header .action-copy-button,
+.nested-panel-header .action-settings-button {
+    width: 24px;
+    height: 24px;
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.nested-panel-header .action-copy-button {
+    background-image: url('../../../../public/assets/icons/copy.png');
+}
+
+.nested-panel-header .action-settings-button {
+    background-image: url('../../../../public/assets/icons/gear.png');
+}
+
+.action-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.action-dropdown button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+}
+
+.action-dropdown button:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-icon {
+    font-size: 14px;
+}
+
+/* Action Panel Content Layout */
+.action-panel-content {
+    display: flex;
+    gap: 20px;
+    min-height: 200px;
+    position: relative;
+    padding: 16px;
+    border: 1px dashed #e0e0e0;
+    margin-left: 0px;
+    background-color: #EDEBEB;
+}
+
+.nested-actions {
+    flex: 1;
+    min-width: 0;
+    background-color: #fff;
+}
+
+.empty-panel-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 24px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    margin: 16px;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+.empty-panel-content.drag-over {
+    border-color: #3498db;
+    background-color: #f0f7ff;
+    transform: scale(1.02);
+}
+
+.drag-instruction {
+    text-align: center;
+    color: #999;
+    transition: all 0.2s ease;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.drag-icon {
+    font-size: 32px;
+    color: #ccc;
+    margin-bottom: 8px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.drag-instruction p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.action-panel-content.drag-over .drag-instruction {
+    color: #3498db;
+    background-color: rgba(240, 247, 255, 0.9);
+}
+
+.action-panel-content.drag-over .drag-icon {
+    color: #3498db;
+    transform: scale(1.1);
+}
+
+/* Update mission-detail-content */
+.mission-detail-content {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+}
+
+.mission-detail-content.has-settings {
+    margin-right: 360px;
+}
+
+/* Settings Panel Container */
+.settings-panel-container {
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.settings-panel-container.active {
+    right: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .mission-detail-content.has-settings {
+        margin-right: 300px;
+    }
+
+    .settings-panel-container {
+        width: 300px;
+        right: -300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-detail-content {
+        flex-direction: column;
+    }
+
+    .mission-detail-content.has-settings {
+        margin-right: 0;
+        margin-bottom: 360px;
+    }
+
+    .settings-panel-container {
+        top: auto;
+        bottom: -360px;
+        right: 0;
+        width: 100%;
+        height: 360px;
+    }
+
+    .settings-panel-container.active {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.info-section, .mission-data-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.info-section h3, .mission-data-section h3 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.info-item {
+    margin-bottom: 16px;
+}
+
+.info-item label {
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+    font-size: 14px;
+}
+
+.info-item span {
+    display: block;
+    color: #333;
+    font-size: 16px;
+}
+
+.mission-data {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #666;
+}
+
+.error-message {
+    color: #dc3545;
+}
+
+.retry-button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.retry-button:hover {
+    background-color: #0056b3;
+}
+
+/* Nested Actions Styles */
+.nested-action-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 0 16px 8px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nested-action-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 4px 4px 0 0;
+}
+
+.nested-action-item.drag-over {
+    border-color: #3498db;
+    background-color: #f0f7ff;
+}
+
+.nested-action-item.drag-over-content {
+    border: 2px dashed #3498db;
+    background-color: #f0f7ff;
+    min-height: 60px;
+}
+
+.nested-action-item.drag-over-content::after {
+    content: 'Drop here to nest';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3498db;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nested-action-children {
+    padding: 8px 0;
+    margin-left: 24px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.nested-action-child {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.nested-action-child .nested-action-header {
+    background-color: #f5f5f5;
+}
+
+.nested-action-grandchild {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.nested-action-grandchild .nested-action-header {
+    background-color: #fafafa;
+}
+
+.nested-action-child.drag-over,
+.nested-action-grandchild.drag-over {
+    border-color: #3498db;
+    background-color: #f0f7ff;
+}
+
+.nested-action-child.drag-over-content,
+.nested-action-grandchild.drag-over-content {
+    border: 2px dashed #3498db;
+    background-color: #f0f7ff;
+    min-height: 60px;
+}
+
+.nested-action-child.drag-over-content::after,
+.nested-action-grandchild.drag-over-content::after {
+    content: 'Drop here to nest';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3498db;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.drag-handle {
+    color: #999;
+    font-size: 14px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.nested-action-header:hover .drag-handle {
+    color: #666;
+}
+
+.action-name {
+    flex: 1;
+    color: #333;
+    font-size: 14px;
+}
+
+.action-order {
+    color: #666;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.nested-action-child .action-name,
+.nested-action-grandchild .action-name {
+    font-size: 13px;
+}
+
+.nested-action-child .action-order,
+.nested-action-grandchild .action-order {
+    font-size: 11px;
+    padding: 1px 6px;
+}
+
+/* Panel Dropzone Styles */
+.action-panel-dropzone {
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-top: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+}
+
+.action-panel-dropzone:hover {
+    border-color: #999;
+    background-color: #f0f0f0;
+}
+
+.action-panel-dropzone.drag-over {
+    border-color: #3498db;
+    background-color: #f0f7ff;
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .mission-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-detail-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .back-button {
+        width: 100%;
+    }
+
+    .submenu {
+        flex-direction: column;
+        border-radius: 8px;
+    }
+
+
+    .submenu-link {
+        padding: 10px 12px;
+        font-size: 12px !important;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        background-color: #fff;
+        justify-items: space-between;
+    }
+
+    .submenu-dropdown {
+        position: static;
+        width: 100%;
+        min-width: auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: #fff;
+        margin-top: 0;
+        display: none;
+    }
+
+    .submenu-dropdown.show {
+        display: block;
+    }
+
+    .submenu-dropdown-link {
+        padding: 8px 12px;
+    }
+
+    .submenu-dropdown-item .drag-handle {
+        font-size: 12px;
+    }
+
+    .action-panel-dropzone {
+        padding: 16px;
+        margin-top: 12px;
+    }
+
+    
+
+    .action-panel-header {
+        padding: 0px 0px;
+    }
+
+    .action-icon {
+        font-size: 16px;
+    }
+
+    .action-panel-nav h3 {
+        font-size: 14px;
+    }
+
+    .action-dropdown-toggle {
+        font-size: 18px;
+        padding: 2px 6px;
+    }
+
+    .action-dropdown {
+        min-width: 140px;
+    }
+
+    .action-dropdown button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .empty-panel-content {
+        min-height: 150px;
+        padding: 16px;
+        margin: 12px;
+    }
+
+    .drag-icon {
+        font-size: 24px;
+    }
+
+    .drag-instruction p {
+        font-size: 13px;
+    }
+
+    .nested-action-item {
+        margin: 0 12px;
+        padding: 8px 12px;
+    }
+
+    .nested-action-item:first-child {
+        margin-top: 12px;
+    }
+
+    .nested-action-item:last-child {
+        margin-bottom: 12px;
+    }
+
+    .nested-action-item .action-order {
+        font-size: 11px;
+        padding: 1px 6px;
+        min-width: 20px;
+    }
+
+    .header-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9em;
+    }
+
+    .button-icon {
+        font-size: 1em;
+    }
+
+    .save-as-button .button-icon.save-as-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 1.2em;
+    }
+}
+
+.nested-panel-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #C0DEA3;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin: 0px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nested-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background-color: #C0DEA3;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 4px 4px 0 0;
+    padding: 0;
+}
+
+.nested-panel-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.nested-panel-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-bool-toggle,
+.action-settings {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+}
+
+.action-bool-toggle:hover,
+.action-settings:hover {
+    background-color: #e0e0e0;
+}
+
+.bool-icon,
+.settings-icon {
+    font-size: 1.1em;
+}
+
+.nested-panel-header .action-bool-toggle,
+.nested-panel-header .action-settings {
+    padding: 6px;
+}
+
+.nested-panel-header .bool-icon,
+.nested-panel-header .settings-icon {
+    font-size: 18px;
+}
+
+.nested-action-grandchild .action-bool-toggle,
+.nested-action-grandchild .action-settings {
+    padding: 3px;
+}
+
+.nested-action-grandchild .bool-icon,
+.nested-action-grandchild .settings-icon {
+    font-size: 14px;
+}
+
+.nested-panel-actions {
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+}
+
+.nested-panel-actions .nested-action-item {
+    margin: 8px 0;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.nested-panel-actions .nested-action-item:first-child {
+    margin-top: 0;
+}
+
+.nested-panel-actions .nested-action-item:last-child {
+    margin-bottom: 0;
+}
+
+.nested-panel-actions .nested-action-header {
+    background-color: #f9f9f9;
+}
+
+.nested-panel-actions .nested-action-children {
+    margin-left: 16px;
+    padding-left: 12px;
+    border-left: 2px solid #e0e0e0;
+}
+
+.nested-panel-actions .nested-action-grandchild {
+    margin: 4px 0;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.nested-panel-actions .nested-action-grandchild .nested-action-header {
+    background-color: #f5f5f5;
+}
+
+.nested-panel-content.drag-over {
+    border: 2px dashed #3498db;
+    background-color: #f0f7ff;
+}
+
+.nested-panel-content.drag-over::after {
+    content: 'Drop here to nest';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3498db;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nested-panel-header .action-name {
+    color: #000000;
+    font-weight: 500;
+}
+
+.nested-panel-header .bool-icon,
+.nested-panel-header .settings-icon {
+    color: #000000;
+}
+
+.nested-panel-header .action-bool-toggle:hover .bool-icon,
+.nested-panel-header .action-settings:hover .settings-icon {
+    color: #000000;
+    opacity: 0.8;
+}
+
+.nested-panel-header .drag-handle {
+    color: #000000;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+}
+
+.nested-panel-header:hover .drag-handle {
+    opacity: 0.8;
+}
+
+.nested-panel-header .drag-handle.runner-icon {
+    color: #ffffff;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1) !important;
+    display: inline-block;
+}
+
+.nested-panel-header:hover .drag-handle.runner-icon {
+    opacity: 0.8;
+}
+
+.runner-icon {
+    color: #ffffff;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1) !important;
+    display: inline-block;
+}
+
+.runner-icon {
+    opacity: 0.8;
+}
+
+
+/* Remove any other transform styles that might affect the icon direction */
+.nested-panel-header:hover .runner-icon,
+.action-header:hover .action-icon,
+.submenu-dropdown-link:hover .runner-icon-sublink {
+    transform: scaleX(-1) !important;
+}
+
+/* Settings Form Styles */
+.settings-form-container {
+    width: 360px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    position: sticky;
+    right: 0;
+    top: 0;
+}
+.settings-form-container input, select
+{
+    width: 100%;
+}
+.settings-form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+}
+
+.settings-form-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.settings-form {
+    padding: 20px 20px 15px 20px !important;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-select .form-input input[type='number'] {
+    width: 95%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.form-select:focus,
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-select:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.loading-indicator,
+.error-indicator {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+.error-indicator {
+    color: #dc3545;
+}
+
+.action-button {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-align: center;
+}
+
+/* Button styles consolidated below */
+
+  
+  .time-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .time-box {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #f9f9f9;
+  }
+  
+  .time-box button {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 0;
+    width: 100%;
+    text-align: center;
+    color: #333;
+  }
+  
+  .time-box button:hover {
+    background-color: #e2e2e2;
+    border-radius: 4px;
+  }
+  
+  .time-value {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 4px;
+    margin: 4px 0;
+    border: none;
+    background: transparent;
+  }
+  
+  .time-label {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn.validate {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn.validate:hover {
+    background-color: #218838;
+  }
+  
+  .btn.undo {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .btn.undo:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .btn.remove {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn.remove:hover {
+    background-color: #c82333;
+  }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .settings-form-container {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-panel-content {
+        flex-direction: column;
+    }
+
+    .settings-form-container {
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .nested-actions {
+        padding-right: 0;
+    }
+
+
+
+    .action-button {
+        padding: 12px 16px;
+    }
+}
+
+/* Add transition for smooth animation */
+.action-panel-content {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .action-panel.has-settings .action-panel-content {
+        flex-direction: column;
+    }
+    
+    .settings-form-container {
+        width: 100%;
+        animation: slideUp 0.3s ease forwards;
+    }
+    
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .action-panel.has-settings .nested-actions {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+}
+
+.nested-action-header-left,
+.nested-panel-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.nested-action-header-action-icon {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    transform: scaleX(-1) !important;
+    color:#fff;
+    height: 35px;
+    background-color: #b3d591;
+}
+.nested-action-header-action-runner-icon {
+    color: #ffffff;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1) !important;
+    display: inline-block;
+}
+.action-runner-icon-container
+{
+    background-color: #b3d591;
+    border-radius: 4px;
+   
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    
+    
+}
+.action-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.action-label {
+    background-color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
+    
+}
+
+.nested-action-header,
+.nested-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px;
+    background-color:#C0DEA3;
+    border-radius: 4px;
+    margin-bottom: 0px;
+}
+
+.nested-action-header-right,
+.nested-panel-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-bool-toggle,
+.action-settings {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+}
+
+.action-bool-toggle:hover,
+.action-settings:hover {
+    background-color: #e0e0e0;
+}
+
+.bool-icon,
+.settings-icon {
+    font-size: 1.1em;
+}
+
+.nested-panel-header .action-name {
+    color: #000000;
+    font-weight: 500;
+}
+
+.nested-panel-header .bool-icon,
+.nested-panel-header .settings-icon {
+    color: #000000;
+}
+
+.nested-panel-header .action-bool-toggle:hover .bool-icon,
+.nested-panel-header .action-settings:hover .settings-icon {
+    color: #000000;
+    opacity: 0.8;
+}
+
+.nested-panel-header .drag-handle {
+    color: #000000;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+}
+
+.nested-panel-header:hover .drag-handle {
+    opacity: 0.8;
+}
+
+.nested-panel-header .drag-handle.runner-icon {
+    color: #ffffff;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1) !important;
+    display: inline-block;
+}
+
+.nested-panel-header:hover .drag-handle.runner-icon {
+    opacity: 0.8;
+}
+
+.runner-icon {
+    color: #ffffff;
+    font-size: 18px;
+    cursor: move;
+    user-select: none;
+    padding: 0 4px;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1) !important;
+    display: inline-block;
+}
+
+.runner-icon {
+    opacity: 0.8;
+}
+
+.runner-icon-sublink {
+  display: inline-block;
+  color: green;           /* đổi màu */
+  font-size: 12px;        /* điều chỉnh nếu cần */
+  background-image: url('../../../../public/assets/icons/run.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+}
+
+.submenu-dropdown-link:hover .runner-icon-sublink {
+    transform: scaleX(-1) scale(1.1) !important;
+    color: #00ff73;
+}
+
+/* Settings Form Styles */
+.settings-form-container {
+    width: 380px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    position: sticky;
+    right: 0;
+    top: 0;
+}
+.settings-form-container input, select
+{
+    width: 95%;
+}
+
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.settings-form {
+    padding: 20px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-select .form-input input[type='number'] {
+    width: 95%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.form-select:focus,
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-select:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.loading-indicator,
+.error-indicator {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+.error-indicator {
+    color: #dc3545;
+}
+
+
+.action-button {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-align: center;
+}
+
+/* Button styles consolidated below */
+
+/* Button styles moved to ActionSettings.css */
+
+/* Button styles consolidated above */
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .time-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .time-box {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #f9f9f9;
+  }
+  
+  .time-box button {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 0;
+    width: 100%;
+    text-align: center;
+    color: #333;
+  }
+  
+  .time-box button:hover {
+    background-color: #e2e2e2;
+    border-radius: 4px;
+  }
+  
+  .time-value {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 4px;
+    margin: 4px 0;
+    border: none;
+    background: transparent;
+  }
+  
+  .time-label {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn.validate {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn.validate:hover {
+    background-color: #218838;
+  }
+  
+  .btn.undo {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .btn.undo:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .btn.remove {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn.remove:hover {
+    background-color: #c82333;
+  }
+  .action-runner-icon-container {
+    cursor: grab;
+}
+
+.action-runner-icon-container.dragging {
+    cursor: grabbing;
+}
+
+.action-panel {
+    cursor: pointer;
+}
+
+.action-panel-header {
+    cursor: pointer;
+}
+
+.action-panel-nav {
+    cursor: pointer;
+}
+
+.action-panel-header-left {
+    cursor: pointer;
+}
+
+.action-name-container {
+    cursor: pointer;
+}
+
+.action-panel-actions {
+    cursor: pointer;
+}
+
+.action-copy-button,
+.action-settings-button {
+    cursor: pointer;
+}
+
+.action-dropdown button {
+    cursor: pointer;
+}
+
+/* Keep default cursor for specific elements */
+.action-panel-content,
+.nested-actions,
+.nested-action-item,
+.nested-action-header,
+.nested-action-children {
+    cursor: default;
+}
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .settings-form-container {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-panel-content {
+        flex-direction: column;
+    }
+
+    .settings-form-container {
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .nested-actions {
+        padding-right: 0;
+    }
+
+    .action-button {
+        padding: 12px 16px;
+    }
+}
+
+/* Add transition for smooth animation */
+.action-panel-content {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .action-panel.has-settings .action-panel-content {
+        flex-direction: column;
+    }
+    
+    .settings-form-container {
+        width: 100%;
+        animation: slideUp 0.3s ease forwards;
+    }
+    
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .action-panel.has-settings .nested-actions {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+}
+
+.action-panel-settings {
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Remove any position: fixed or absolute from move-settings-container */
+.action-panel-settings .move-settings-container {
+    position: static;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border: none;
+}
+
+.main-action-panel-settings {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 380px;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #e0e0e0;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.main-action-panel-settings.active {
+    transform: translateX(0);
+}
+
+.mission-detail-content {
+    transition: margin-right 0.3s ease;
+}
+
+.mission-detail-content.has-settings {
+    margin-right: 380px;
+}
+.settings-forms-overlay
+{
+    position: fixed;
+    top: 250px;
+    right: 5px;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+/* Update responsive styles */
+@media (max-width: 1200px) {
+    .main-action-panel-settings {
+        width: 300px;
+    }
+    
+    .mission-detail-content.has-settings {
+        margin-right: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-action-panel-settings {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        bottom: 0;
+        top: auto;
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .mission-detail-content.has-settings {
+        margin-right: 0;
+    }
+} 
+
+/* Container Levels */
+.action-panels-container-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 10px;
+  z-index: 1;
+  min-height: 50px;
+  height: 100%;
+  background: white;
+  border: 2px dashed transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* WebKit scrollbar styling for root container */
+.action-panels-container-root::-webkit-scrollbar {
+  width: 10px;
+}
+.action-panels-container-root::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-left: 1px solid #e0e0e0;
+}
+.action-panels-container-root::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 6px;
+}
+.action-panels-container-root::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.action-panels-container-nested {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 2;
+  min-height: 120px;
+  padding: 20px 10px 20px 10px;
+  position: relative;
+}
+
+.action-panels-container-deep_nested {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 6px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  z-index: 3;
+}
+
+/* Empty nested container styling */
+.action-panels-container-nested:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+  border: 2px dashed #ccc;
+  min-height: 120px;
+  background-color: #fafafa;
+}
+
+.action-panels-container-nested:empty::before {
+  content: "Drop actions here";
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Drag Over States */
+.action-panels-container-root.drag-over,
+.action-panels-container-nested.drag-over,
+.action-panels-container-deep_nested.drag-over {
+  /* border: 2px dashed #3498db; */
+  background-color: #f0f7ff;
+  /* Ensure scroll still works during drag */
+  /* overflow-y: auto !important; */
+  /* overflow-x: hidden !important; */
+}
+
+/* Draggable Items */
+.draggable-item {
+  cursor: move;
+  /*transition: transform 0.2s ease, box-shadow 0.2s ease;*/
+  position: relative;
+
+}
+
+.draggable-item:hover {
+  transform: translateY(-2px);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* Ensure hover works with scroll */
+  z-index: 10;
+}
+
+.draggable-item.dragging {
+  /*opacity: 0.8;
+  transform: scale(1.02);*/
+  z-index: 9999;
+  /* Ensure dragging works with scroll */
+
+}
+
+
+
+/* Container Hierarchy Visual */
+.action-panels-container-nested {
+  position: relative;
+}
+
+.action-panels-container-nested::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #3498db;
+  border-radius: 1px;
+}
+
+.action-panels-container-deep_nested::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background-color: #e74c3c;
+  border-radius: 1px;
+}
+
+
+
+
+
+/* Enhanced Drop Zone Feedback */
+.action-panels-container-root.drag-over {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(33, 150, 243, 0.1) 100%);
+  /* border: 2px dashed #2196F3; */
+  border-radius: 8px;
+  position: relative;
+  min-height: 120px;
+}
+
+
+
+/* Drop Zone Indicators */
+.draggable-item {
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: grab;
+  user-select: none;
+  margin-bottom: 4px;
+}
+
+.draggable-item:hover {
+  transform: translateY(-1px);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.draggable-item.dragging {
+  cursor: grabbing;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.2);
+}
+
+.draggable-item:active {
+  cursor: grabbing;
+}
+
+/* Drop Zone Lines */
+.action-panels-container-root.drag-over .draggable-item:not(.dragging) {
+  position: relative;
+}
+
+.action-panels-container-root.drag-over .draggable-item:not(.dragging)::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 0px;
+
+  /*opacity: 0;*/
+  /*transition: opacity 0.2s ease;*/
+}
+
+.action-panels-container-root.drag-over .draggable-item:not(.dragging):hover::before {
+  opacity: 1;
+}
+
+/* Enhanced Animation */
+@keyframes dragPulse {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.02) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+ .draggable-item.dragging {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  /* transition: visibility 0s, opacity 0s !important; */
+   /* height: 0 !important; */
+  /*margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important; */
+}
+
+/* Ẩn hoàn toàn khi đang kéo – áp dụng cho cả root item và nested child */
+
+
+/* Container States - Root container styling */
+
+.action-panels-container-root:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+  border: 2px dashed #ccc;
+  min-height: 120px;
+}
+
+.action-panels-container-root:empty::before {
+  content: "Drop actions here";
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .action-panels-container-root {
+    padding: 8px;
+    min-height: 80px;
+  }
+  
+  .draggable-item {
+    margin-bottom: 3px;
+  }
+} 
+
+/* Animation for drag feedback */
+@keyframes dragPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* .draggable-item.dragging {
+  animation: dragPulse 0.5s ease-in-out infinite;
+} */
+
+/* Drop zone indicator */
+.drop-zone-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(33, 150, 243, 0.1);
+  border: 2px dashed #2196F3;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  height: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.drop-zone-indicator.active {
+  opacity: 1;
+}
+
+/* Buffer Zone Styles */
+.buffer-zone {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.buffer-zone-top {
+  border-top: 3px solid #2196F3;
+  background: linear-gradient(to bottom, rgba(33, 150, 243, 0.1), transparent);
+  padding-top: 8px;
+  margin-top: -8px;
+}
+
+.buffer-zone-bottom {
+  border-bottom: 3px solid #2196F3;
+  background: linear-gradient(to top, rgba(33, 150, 243, 0.1), transparent);
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+
+.buffer-zone-middle {
+  position: relative;
+}
+
+.buffer-zone-middle::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2196F3, #21CBF3);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+  z-index: 10;
+}
+
+.buffer-zone-middle::after {
+  content: "Drop here";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2196F3;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 11;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container buffer zones */
+.action-panels-container-root.buffer-top {
+  border-top: 3px solid #2196F3;
+  background: linear-gradient(to bottom, rgba(33, 150, 243, 0.1), transparent);
+  padding-top: 12px;
+}
+
+.action-panels-container-root.buffer-bottom {
+  border-bottom: 3px solid #2196F3;
+  background: linear-gradient(to top, rgba(33, 150, 243, 0.1), transparent);
+  padding-bottom: 12px;
+}
+
+.action-panels-container-nested.buffer-top,
+.action-panels-container-deep_nested.buffer-top {
+  border-top: 2px solid #2196F3;
+  background: linear-gradient(to bottom, rgba(33, 150, 243, 0.08), transparent);
+  padding-top: 8px;
+}
+
+.action-panels-container-nested.buffer-bottom,
+.action-panels-container-deep_nested.buffer-bottom {
+  border-bottom: 2px solid #2196F3;
+  background: linear-gradient(to top, rgba(33, 150, 243, 0.08), transparent);
+  padding-bottom: 8px;
+}
+
+.submenu-slide {
+    background: none;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    height: 100%;
+    padding: 12px 5px;
+}
+
+.submenu-slide:hover {
+    background-color: #e0e0e0;
+}
+
+.submenu-slide:active {
+    background-color: #c0c0c0;
+}
+
+.submenu-slide:focus {      
+    outline: none;
+}
+
+.submenu-slide:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button-icon.slide_left-icon {
+    background-image: url('../../../../public/assets/icons/left-arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+}
+
+.button-icon.slide_right-icon {
+    background-image: url('../../../../public/assets/icons/next.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 1024px) {
+/* Action Panels Container */
+.action-panels-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 20px;
+    /* overflow-y: auto; */
+    min-height: 200px;
+    height: 100%;
+    gap: 8px;
+}
+}

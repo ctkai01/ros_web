@@ -1,0 +1,301 @@
+.mission-log-page-container {
+    padding: 10px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.mission-log-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.mission-log-main-content {
+    padding: 0;
+}
+
+.mission-log-list {
+    /* min-height: 400px; */
+}
+
+.mission-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    height: auto;
+    font-size: 13px;
+}
+
+.mission-log-table th {
+    background-color: #f8f9fa;
+    padding: 12px 16px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 14px;
+}
+
+.mission-log-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.mission-log-table-row {
+    max-width: 100px;
+}
+
+.mission-log-table-row:hover {
+    background-color: #f8f9fa;
+}
+
+.mission-log-icon-cell {
+    width: 32px;
+    text-align: center;
+}
+
+.mission-log-icon-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.mission-log-id-cell {
+    min-width: 60px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.mission-log-mission-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.mission-log-function-cell {
+    min-width: 120px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.function-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.function-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mission-log-status-cell {
+    min-width: 100px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+
+
+.mission-log-queued-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.mission-log-started-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.mission-log-completed-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.mission-log-no-logs {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 16px;
+    background: white;
+}
+
+/* Disabled view button when no run time available */
+.table-action-icon.view.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f0f0f0 !important;
+    border-color: #ddd !important;
+}
+
+.table-action-icon.view.disabled:hover {
+    transform: none !important;
+    opacity: 0.5 !important;
+}
+
+/* Mission Log Table Styles */
+.mission-log-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    height: auto;
+    overflow: visible;
+    font-size: 13px;
+}
+
+.mission-log-table th,
+.mission-log-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+    font-size: 13px;
+}
+
+.mission-log-table th {
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+/* Column widths */
+.mission-log-table th:nth-child(1),
+.mission-log-table td:nth-child(1) {
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    text-align: center;
+}
+
+.mission-log-table th:nth-child(2),
+.mission-log-table td:nth-child(2) {
+    width: 8%;
+    min-width: 60px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.mission-log-table th:nth-child(3),
+.mission-log-table td:nth-child(3) {
+    width: 18%;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.mission-log-table th:nth-child(4),
+.mission-log-table td:nth-child(4) {
+    width: 17%;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: left;
+}
+
+.mission-log-table th:nth-child(5),
+.mission-log-table td:nth-child(5) {
+    width: 10%;
+    min-width: 100px;
+    max-width: 120px;
+    text-align: center;
+}
+
+.mission-log-table th:nth-child(6),
+.mission-log-table td:nth-child(6) {
+    width: 12%;
+    min-width: 100px;
+    max-width: 120px;
+    text-align: center;
+}
+
+.mission-log-table th:nth-child(7),
+.mission-log-table td:nth-child(7) {
+    width: 15%;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: left;
+}
+
+/* Add vertical borders between columns */
+.mission-log-table th:not(:last-child),
+.mission-log-table td:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.mission-log-table td {
+    padding: 5px;
+}
+
+.mission-log-icon {
+    background-image: url("../../../../public/assets/icons/mission.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    min-width: 20px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-log-page-container {
+        padding: 10px;
+    }
+
+    .mission-log-table {
+        font-size: 14px;
+    }
+
+    .mission-log-table th,
+    .mission-log-table td {
+        padding: 8px 12px;
+    }
+
+    .mission-log-id-cell,
+    .mission-log-mission-cell,
+    .mission-log-function-cell,
+    .mission-log-status-cell,
+    .mission-log-queued-cell,
+    .mission-log-started-cell,
+    .mission-log-completed-cell {
+        min-width: auto;
+    }
+}

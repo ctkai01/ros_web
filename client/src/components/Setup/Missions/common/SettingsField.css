@@ -1,0 +1,160 @@
+/* SettingsField Component Styles */
+
+.setting-field {
+  margin-bottom: 5px;
+}
+
+.setting-field:last-child {
+  margin-bottom: 0;
+}
+
+.setting-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.setting-input-container {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.setting-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+  height: 32px; /* Increased by ~30% from 42px */
+  box-sizing: border-box;
+  color: #747272;
+}
+
+.setting-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.setting-input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  color: #666;
+}
+
+/* Variable button styles */
+.setting-variable-button {
+    min-width: 32px; /* Giảm 50% từ 42px xuống 21px */
+    height: 32px; /* Giảm 50% từ 42px xuống 21px */
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0 4px; /* Giảm 50% từ 0 8px xuống 0 4px */
+  box-sizing: border-box;
+  gap: 2px; /* Giảm 50% từ 4px xuống 2px */
+}
+
+.setting-variable-button:hover {
+  border-color: #cb81d6;
+  background-color: #f8f9fa;
+}
+
+.setting-variable-button.active {
+  border-color: #cb81d6;
+  background-color: #cb81d6;
+  color: white;
+  min-width: 32px; /* Giảm 50% từ 70px xuống 35px */
+}
+
+.setting-variable-button.active:hover {
+  background-color: #b86bc4;
+}
+
+.setting-variable-icon {
+  width: 32px; /* Giảm 50% từ 42px xuống 21px */
+  height: 32px; /* Giảm 50% từ 42px xuống 21px */
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+.setting-variable-button.active .setting-variable-icon {
+  /* Removed filter to keep original icon color */
+}
+
+.setting-variable-text {
+  min-height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Number input specific styles */
+.setting-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.setting-input[type="number"]::-webkit-outer-spin-button,
+.setting-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Select/Combobox styles */
+.setting-input[type="select"] {
+  cursor: pointer;
+}
+
+.setting-input option {
+  padding: 8px;
+}
+
+/* Help text styles */
+.setting-help-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Validation styles */
+.setting-input.invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.setting-input.valid {
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .setting-input-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .setting-variable-button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .setting-input {
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,147 @@
+.view-map-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.view-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+
+
+.go-back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.go-back-button:hover {
+  background-color: #1565a3;
+}
+
+.view-map-content {
+    flex: 1;
+    position: relative;
+    background: #f5f5f5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 10px;
+    height: calc(100vh - 120px);
+}
+
+
+
+.toolbar-right-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+
+.reset-view-icon {
+  background-image: url('../../../../assets/icons/reset-view.png');
+}
+
+.zoom-in-icon {
+  background-image: url('../../../../assets/icons/zoom-in.png');
+}
+
+.zoom-out-icon {
+  background-image: url('../../../../assets/icons/zoom-out.png');
+}
+
+.viewer-map-canvas {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding-top: 60px;
+  min-height: 0;
+  position: relative;
+}
+
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1e83cb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  gap: 1rem;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #d32f2f;
+  text-align: center;
+  max-width: 80%;
+}
+
+.retry-button {
+  padding: 0.5rem 1rem;
+  background-color: #1e83cb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+  background-color: #1565a3;
+} 

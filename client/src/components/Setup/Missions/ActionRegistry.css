@@ -1,0 +1,93 @@
+.action-settings-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.settings-content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 400px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.settings-content h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-content .form-group {
+  margin-bottom: 16px;
+}
+
+.settings-content label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.settings-content input,
+.settings-content select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.settings-content .button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+
+.settings-content button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-content .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.settings-content .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.settings-content .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.settings-content .btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.settings-content .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.settings-content .btn-danger:hover {
+  background-color: #c82333;
+} 

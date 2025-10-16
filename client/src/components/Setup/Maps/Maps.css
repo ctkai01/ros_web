@@ -1,0 +1,490 @@
+.maps-page-container {
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.maps-content {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+
+/* Maps Table Styles */
+.maps-table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    height: auto;
+    overflow: visible;
+    font-size: 13px;
+}
+
+.maps-table th,
+.maps-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+    font-size: 13px;
+}
+
+.maps-table th {
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+/* Column widths */
+.maps-table th:nth-child(1),
+.maps-table td:nth-child(1),
+.icon-column {
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+}
+
+.maps-table th:nth-child(2),
+.maps-table td:nth-child(2) {
+    width: 78%;
+    min-width: 78%;
+    max-width: 78%;
+}
+
+.maps-table th:nth-child(3),
+.maps-table td:nth-child(3) {
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+    text-align: center;
+}
+
+.maps-table th:nth-child(4),
+.maps-table td:nth-child(4) {
+    width: 104px;
+    min-width: 104px;
+    max-width: 104px;
+    text-align: center;
+
+}
+
+/* Add vertical borders between columns */
+.maps-table th:not(:last-child),
+.maps-table td:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.maps-table td {
+    padding: 0;
+}
+
+/* Site Maps Row */
+.site-maps-row {
+    background: #fff;
+    padding: 0;
+}
+
+.site-maps-row.collapsed {
+    display: none;
+}
+
+.site-cell {
+    padding: 12px !important;
+    background-color: #f5f5f5;
+}
+
+.site-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.expand-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.site-right {
+    display: flex;
+    gap: 10px;
+}
+
+.export-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #8BC34A;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.export-button:hover {
+    background-color: #7CB342;
+    transform: scale(1.02);
+}
+
+.export-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: url('../../../../public/assets/icons/arow-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+}
+
+/* Child Maps Container */
+.child-maps-container {
+    padding: 0;
+}
+
+.map-row {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.map-row:last-child {
+    border-bottom: none;
+}
+
+.map-row:hover {
+    background: #f5f5f5;
+}
+
+.map-content {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    height: 100%;
+    background-color: white;
+    position: relative;
+    padding: 5px;
+}
+
+.map-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background-color: #eee;
+}
+
+.map-row:last-child .map-content::after {
+    display: none;
+}
+
+.map-icon {
+    background-image: url('../../../../public/assets/icons/map-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+}
+
+.map-icon::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #eee;
+}
+
+.map-icon img {
+    width: 20px ;
+    height: 20px ;
+}
+
+.map-info {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 20px 8px 8px;
+    position: relative;
+}
+
+.map-info::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #eee;
+}
+
+.map-name-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.map-title {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.map-creator {
+    width: 150px;
+    min-width: 150px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.map-creator::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #eee;
+}
+
+/* Maps Container */
+.maps-container.collapsed {
+    display: none;
+}
+
+/* Loading, Error, and Empty States */
+.loading-message,
+.error-message,
+.empty-message {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.error-message {
+    color: #e74c3c;
+}
+
+.retry-button {
+    margin-left: 10px;
+    padding: 4px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.retry-button:hover {
+    background-color: #2980b9;
+}
+
+/* iPad Safari specific styles */
+@supports (-webkit-touch-callout: none) {
+  @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+    
+    /* Table font sizes */
+    .maps-table th,
+    .maps-table td {
+        font-size: 13px;
+    }
+
+    .maps-table th {
+        font-size: 13px;
+    }
+
+    .site-name {
+        font-size: 13px;
+    }
+
+    .map-title {
+        font-size: 13px;
+    }
+
+    .map-creator {
+        font-size: 13px;
+    }
+
+    /* Badge and button sizes */
+    .active-badge {
+        font-size: 11px;
+    }
+
+    .export-button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+    .export-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Icon sizes */
+    .map-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+  }
+}
+
+/* Reset to original sizes for non-iPad devices */
+@media not all and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .maps-table th,
+    .maps-table td {
+        font-size: 14px;
+    }
+
+    .maps-table th {
+        font-size: 14px;
+    }
+
+    .site-name {
+        font-size: 14px;
+    }
+
+    .map-title {
+        font-size: 13px;
+    }
+
+    .map-creator {
+        font-size: 13px;
+    }
+
+    .active-badge {
+        font-size: 12px;
+    }
+
+    .export-button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+    .export-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .map-icon img {
+        width: 20px ;
+        height: 20px ;
+    }
+
+}
+
+.confirm-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.confirm-dialog {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.confirm-dialog-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.confirm-dialog-message {
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.confirm-dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.confirm-dialog-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.confirm-dialog-button.cancel {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.confirm-dialog-button.cancel:hover {
+    background-color: #e0e0e0;
+}
+
+.confirm-dialog-button.confirm {
+    background-color: #8BC34A;
+    color: white;
+}
+
+.confirm-dialog-button.confirm:hover {
+    background-color: #7CB342;
+} 
+
+.map-content .tool-icon {
+    width: 14px !important;
+    height: 14px !important;
+}
+.map-content .tool-icon.view-icon {
+    background-image: url('../../../../public/assets/icons/view.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}

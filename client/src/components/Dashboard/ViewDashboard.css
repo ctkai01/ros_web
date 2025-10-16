@@ -1,0 +1,214 @@
+.view-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.view-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #337ab7;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  border: none;
+  box-shadow: none;
+  z-index: 10;
+}
+
+.view-dashboard-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-dashboard-header .header-left h1 {
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+}
+
+.view-dashboard-header .dashboard-subtitle {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+.view-dashboard-header .header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dashboard-link {
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.dashboard-link:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.edit-icon, .back-icon {
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.edit-icon {
+  background-image: url('../../../public/assets/icons/pencil.png');
+}
+
+.back-icon {
+  background-image: url('../../../public/assets/icons/previous.png');
+}
+
+.view-dashboard-content {
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 140px);
+  background: #f5f5f5;
+  margin: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-dashboard-content .widgets-grid {
+  display: grid;
+  background: #f5f5f5;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, minmax(120px, 1fr));
+  gap: 15px;
+  width: 100%;
+  padding: 0px;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.view-dashboard-content .widgets-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.view-dashboard-content .widget-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.view-dashboard-content .widget-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.view-dashboard-content .widget-item.colspan-2 {
+  grid-column: span 2;
+}
+
+.view-dashboard-content .widget-item.colspan-3 {
+  grid-column: span 3;
+}
+
+.view-dashboard-content .widget-item.colspan-4 {
+  grid-column: span 4;
+}
+
+.view-dashboard-content .widget-item.rowspan-2 {
+  grid-row: span 2;
+}
+
+.view-dashboard-content .widget-item.rowspan-3 {
+  grid-row: span 3;
+}
+
+.view-dashboard-content .widget-item.rowspan-4 {
+  grid-row: span 4;
+}
+
+.view-dashboard-content .widget-item.rowspan-5 {
+  grid-row: span 5;
+}
+
+.view-dashboard-content .widget-item.rowspan-6 {
+  grid-row: span 6;
+}
+
+.view-dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #666;
+}
+
+.view-dashboard-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #d32f2f;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+
+  .view-dashboard-content .widget-item.colspan-2,
+  .view-dashboard-content .widget-item.colspan-3,
+  .view-dashboard-content .widget-item.colspan-4 {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .view-dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+    padding: 16px;
+  }
+  
+  .view-dashboard-header .header-actions {
+    justify-content: center;
+  }
+  
+  .view-dashboard-content {
+    padding: 15px;
+  }
+  
+  .view-dashboard-content .widgets-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .view-dashboard-content .widget-item.colspan-2,
+  .view-dashboard-content .widget-item.colspan-3,
+  .view-dashboard-content .widget-item.colspan-4 {
+    grid-column: span 1;
+  }
+}
+
+ 

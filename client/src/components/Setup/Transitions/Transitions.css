@@ -1,0 +1,350 @@
+.transitions-page-container {
+    padding: 10px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.transitions-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.edit-transition-page {
+    padding: 10px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.create-transition-page {
+    padding: 10px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.search-hint {
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.search-highlight {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 1px 2px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.position-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 13px;
+}
+
+.map-name {
+    font-weight: 400;
+    color: #666;
+    font-size: 11px;
+    font-style: italic;
+    margin-left: 4px;
+}
+
+
+.transitions-main-content {
+    padding: 0;
+}
+
+
+.transitions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.transitions-table th {
+    background-color: #f8f9fa;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 14px;
+}
+
+.transitions-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.transitions-table-row:hover {
+    background-color: #f8f9fa;
+}
+
+.transitions-icon-cell {
+    min-width: 60px;
+    text-align: center;
+}
+
+.transitions-icon-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transitions-name-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.transitions-start-cell {
+    min-width: 150px;
+    text-align: center ;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.transitions-mission-cell {
+    min-width: 120px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.transitions-goal-cell {
+    min-width: 150px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.transitions-created-cell {
+    width: 150px;
+    min-width: 150px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.transitions-actions-cell {
+    min-width: 120px;
+    text-align: right;
+}
+
+.id-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.site-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.position-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #e8f5e8;
+    color: #2e7d32;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mission-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #fff3e0;
+    color: #f57c00;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.user-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #fce4ec;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.datetime-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #f1f8e9;
+    color: #558b2f;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+
+
+
+.transitions-no-transitions {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 16px;
+    background: white;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transitions-page-container {
+        padding: 10px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-input {
+        min-width: auto;
+    }
+
+    .pagination-controls {
+        justify-content: center;
+    }
+
+    .transitions-table {
+        font-size: 14px;
+    }
+
+    .transitions-table th,
+    .transitions-table td {
+        padding: 8px 12px;
+    }
+
+    .transitions-icon-cell,
+    .transitions-start-cell,
+    .transitions-mission-cell,
+    .transitions-goal-cell,
+    .transitions-created-cell {
+        min-width: auto;
+    }
+}
+
+
+
+/* Maps Table Styles */
+.transitions-table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    height: auto;
+    overflow: visible;
+    font-size: 13px;
+}
+
+.transitions-table th,
+.transitions-table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+    font-size: 13px;
+}
+
+.transitions-table th {
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+/* Column widths */
+.transitions-table th:nth-child(1),
+.transitions-table td:nth-child(1),
+.icon-column {
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+}
+
+.transitions-table th:nth-child(2),
+.transitions-table td:nth-child(2) {
+    width: 78%;
+    min-width: 78%;
+    max-width: 78%;
+}
+
+.transitions-table th:nth-child(3),
+.transitions-table td:nth-child(3) {
+    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
+    text-align: center;
+}
+
+.transitions-table th:nth-child(4),
+.transitions-table td:nth-child(4) {
+    width: 104px;
+    min-width: 104px;
+    max-width: 104px;
+    text-align: center;
+
+}
+
+/* Add vertical borders between columns */
+.transitions-table th:not(:last-child),
+.transitions-table td:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.transitions-table td {
+    padding: 0;
+}
+
+
+
+/* .transitions-creator::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #eee;
+} */

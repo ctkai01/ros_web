@@ -1,0 +1,7 @@
+/* Import common navigation styles */
+@import '../common/Navigation.css';
+
+/* Dashboard-specific overrides if needed */
+.dashboard-nav {
+    /* Inherits all styles from .nav-common */
+} 

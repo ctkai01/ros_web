@@ -1,0 +1,513 @@
+.mission-action-panel-parent {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 16px; */
+}
+
+/* Touch and drag support */
+.draggable-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+}
+
+.draggable-item * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.action-panels-container-root,
+.action-panels-container-nested,
+.action-panels-container-deep_nested {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+}
+
+.mission-action-panel-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background-color: #a4d2f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    pointer-events: auto;
+  }
+
+  /* .mission-action-panel-nav.dragging {
+    opacity: 0.8;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+  } */
+
+.mission-action-panel-nav.drag-over,
+.mission-action-panel-nav.drag-over::after {
+    display: none !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+}
+  .mission-action-content,
+  .mission-action-buttons {
+    pointer-events: auto;
+  }
+  
+  .mission-action-parent-content-area-container {
+    /* display: flex; */
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+     border: 1px solid #e0e0e0; 
+    margin-left: 32px;
+    top: -2px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .mission-action-parent-content-area-container.expanded {
+    max-height: 1000px;
+  }
+
+  .mission-action-parent-content-area-container.collapsed {
+    max-height: 0;
+    border: none;
+  }
+
+  .mission-action-parent-content-area {
+    position: relative;
+    background-color: white;
+    /* padding: 8px; */
+    border-radius: 0 0 8px 8px;
+    min-height: 50px;
+  }
+
+  /* Hiển thị text khi không có child */
+  .mission-action-parent-content-area:empty::before {
+    content: "You can drag action here.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* Ẩn text khi có child */
+  .mission-action-parent-content-area:not(:empty)::before {
+    display: none;
+  }
+
+  
+
+  .mission-action-children {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+     padding: 0px; 
+  }
+  
+  /* Style cho mission-action-buttons trong mission-action-children */
+  .mission-action-children .mission-action-buttons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* background-color: #82b8eb; */
+    border-radius: 4px;
+    opacity: 1; /* Đảm bảo buttons luôn hiển thị */
+    pointer-events: auto; /* Cho phép tương tác với buttons */
+    
+  }
+
+  .mission-action-children .mission-action-buttons button {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  /* Prevent any drop interactions on Move panels */
+  .mission-action-panel-nav.drag-over,
+  .mission-action-panel-nav.drag-over::after {
+    display: none !important;
+    pointer-events: none !important;
+  }
+  
+
+
+.mission-action-content {
+    display: flex;
+    align-items: center;
+    padding: 0 0px;
+    font-size: 12px;
+  }
+
+  .mission-action-runner-icon-container {
+    background-color: #37a1e7;
+    border-radius: 4px 0 0 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    pointer-events: auto;
+    width: 32px;
+    height: 32px;
+  }
+
+  .mission-action-runner-icon {
+    width: 100%;
+    height: 100%;
+    /* background-color: #37a1e7; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    background-image: url('../../../../public/assets/icons/running.png');
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* padding: 4px; */
+  }
+  /* User created action icon uses mission icon */
+  .mission-action-panel-nav[data-action-name='User Action'] .mission-action-runner-icon,
+  .mission-action-panel-nav[data-action-name='UserAction'] .mission-action-runner-icon {
+    background-image: url('../../../../public/assets/icons/mission.png');
+  }
+  .mission-action-runner-icon [action-name='userCreate'] {
+    background-image: url('../../../../public/assets/icons/mission.png');
+  }
+
+  .mission-action-panel-nav[data-action-name='MoveToCoordinate'] .mission-action-runner-icon {
+    background-image: url('../../../../public/assets/icons/move.png');
+  }
+
+ 
+  .mission-action-name-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+  }
+  
+
+  .mission-action-name {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .mission-action-value {
+    background-color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mission-action-value {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+    margin: 0;
+    min-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .mission-action-content-subtitle {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0 10px;
+    background-color: #f5f5f5;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .mission-action-buttons {
+    display: flex;
+    align-items: center;
+    height: 32px;
+  }
+
+  .mission-action-buttons button {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-left: 1px solid #e0e0e0;
+  }
+.mission-action-toggle-button,
+.mission-action-copy-button,
+.mission-action-settings-button {
+  background: none;
+  cursor: pointer;
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease;
+  /* border: 1px solid #e0e0e0; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+  /* Ensure buttons can receive touch events */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.mission-action-copy-button {
+  background-image: url('../../../../public/assets/icons/copy.png');
+}
+
+.mission-action-settings-button {
+    background-image: url('../../../../public/assets/icons/settings-white.png');
+  }
+
+.mission-action-settings-button.settings-open {
+    background-image: url('../../../../public/assets/icons/settings-black.png');
+  }
+
+.mission-action-toggle-button {
+    background: none;
+    cursor: pointer;
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease;
+  }
+
+  .mission-action-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mission-action-toggle-button.expanded {
+    background-image: url('../../../../public/assets/icons/down-arrow-white.png');
+    transform: rotate(0deg);
+  }
+
+  .mission-action-toggle-button.collapsed,
+  .mission-action-toggle-button:not(.expanded) {
+    background-image: url('../../../../public/assets/icons/right-arrow-white.png');
+    transform: rotate(0deg);
+  }
+  
+  /* Prevent any drop interactions on Move panels */
+  .mission-action-panel-nav.drag-over,
+  .mission-action-panel-nav.drag-over::after {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+.mission-action-children {
+  position: relative;
+}
+
+.mission-action-children .mission-action-panel-nav {
+  cursor: move;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* .mission-action-children .mission-action-panel-nav.dragging {
+  opacity: 0.7;
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+} */
+
+.mission-action-children .mission-action-panel-nav.drag-over {
+  background-color: #e3f2fd;
+  transform: translateY(2px);
+}
+
+.mission-action-children .mission-action-panel-nav.drag-over::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #2196f3;
+}
+
+/* Thêm hiệu ứng hover */
+.mission-action-children .mission-action-panel-nav:hover {
+  background-color: #f5f5f5;
+}
+
+/* Thêm hiệu ứng khi kéo qua */
+.mission-action-children .mission-action-panel-nav.drag-over:hover {
+  background-color: #e3f2fd;
+}
+
+/* Action Child Items - Common styles for all action types */
+/* Base styles for all child items */
+.action-child-item {
+  display: block;
+  width: 100%;
+  /* padding: 12px; */
+  /* padding-left: 24px; Add extra left padding to push action buttons to the right */
+  /* background: white; */
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* .action-child-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+} */
+
+/* Move action specific styles */
+.action-child-item.move-action {
+  background-color: #C0DEA3;
+}
+
+.action-child-item.move-action .action-child-icon {
+  background-color: #b3d591;
+}
+
+/* Wait action specific styles */
+.action-child-item.wait-action {
+  background-color: #FFE5B4;
+}
+
+.action-child-item.wait-action .action-child-icon {
+  background-color: #FFD700;
+}
+
+/* Loop action specific styles */
+.action-child-item.loop-action {
+  background-color: #e8f4fd;
+}
+
+.action-child-item.loop-action .action-child-icon {
+  background-color: #0066cc;
+  color: white;
+}
+
+/* Common icon styles */
+.action-child-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.action-child-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.action-child-name {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.action-child-detail {
+  color: #666;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Action buttons */
+.action-child-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.action-child-button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.action-child-button:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Mission Action Condition Display */
+.mission-action-condition {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.condition-text {
+  font-weight: 500;
+  color: #333;
+}
+
+.condition-index {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.condition-operator {
+  color: #666;
+  font-weight: 400;
+}
+
+.condition-value {
+  color: #28a745;
+  font-weight: 500;
+}
+  

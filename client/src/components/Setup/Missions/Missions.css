@@ -1,0 +1,611 @@
+.missions-private-container {
+  height: calc(100vh - 60px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.missions-private-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.missions-private-header-left {
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+}
+.missions-private-header-left-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.missions-private-header-left h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.missions-private-subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.missions-private-info-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #666;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: help;
+}
+
+.missions-private-create-btn {
+  padding: 8px 16px;
+  background: #8BC34A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.missions-private-create-btn:hover {
+  background: #7CB342;
+}
+
+.missions-private-content {
+  flex: 1;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.missions-private-filters {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.missions-private-filter-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.missions-private-filter-dropdown span {
+  color: #666;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.missions-private-filter-dropdown select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+}
+
+.missions-private-create-edit-groups-btn {
+  padding: 0 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.missions-private-create-edit-groups-btn:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.missions-private-main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Remove missions-filter-section since it's now part of missions-private-filters */
+
+
+.missions-content-wrapper {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.missions-private-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  border-radius: 4px;
+  padding: 0px 15px 15px 15px;
+  flex: 2;
+  min-height: 400px;
+}
+
+.missions-private-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  gap: 12px;
+  height: 36px;
+}
+
+.missions-private-item:hover {
+  background: #f9f9f9;
+}
+
+.missions-private-icon {
+  width: 32px;
+  height: 32px;
+  background: #8BC34A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missions-private-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.missions-private-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.missions-private-name {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.missions-private-site {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.missions-private-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Standard size for all action buttons */
+.missions-private-actions button,
+.missions-private-actions .missions-private-edit-btn,
+.missions-private-actions .missions-private-delete-btn,
+.missions-private-actions .missions-private-details-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.missions-private-actions .missions-private-edit-btn {
+  background-image: url('../../../../public/assets/icons/pencil.png');
+}
+
+.missions-private-actions .missions-private-edit-btn:hover {
+  background-color: #E3F2FD;
+  border-color: #2196F3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+.missions-private-actions .missions-private-delete-btn {
+  background-image: url('../../../../public/assets/icons/delete-white.png');
+  background-color: #F44336;
+}
+
+.missions-private-actions .missions-private-delete-btn:hover {
+  background-color: #E53935;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.2);
+}
+
+.missions-private-actions .missions-private-details-btn {
+  background-image: url('../../../../public/assets/icons/view.png');
+}
+
+.missions-private-actions .missions-private-details-btn:hover {
+  background-color: #E3F2FD;
+  border-color: #2196F3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+/* Hover states */
+.missions-private-actions button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.missions-private-actions button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Specific hover states */
+.missions-private-actions .missions-private-edit-btn:hover {
+  border-color: #2196F3;
+  background-color: #E3F2FD;
+  background-size: 20px;
+}
+
+.missions-private-actions .missions-private-delete-btn:hover {
+  border-color: #F44336;
+  background-color: #FFEBEE;
+  background-size: 20px;
+}
+
+.missions-private-actions .missions-private-copy-btn:hover {
+  border-color: #4CAF50;
+  background-color: #E8F5E9;
+  background-size: 20px;
+}
+
+.missions-private-queue {
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 15px;
+  min-width: 250px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 220px);
+}
+
+.missions-private-queue h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.missions-private-queue-status {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.missions-private-queue-empty {
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Embed container for MissionQueueWidgetComponent */
+.missions-private-queue-embed {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  min-height: 200px;
+}
+
+.missions-private-queue-embed .mission-queue-widget.display-mode {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.missions-private-queue-embed .mission-queue-widget .queue-content {
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.missions-private-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #666;
+}
+
+.missions-private-error {
+  color: #f44336;
+  text-align: center;
+  padding: 20px;
+}
+
+.missions-private-no-missions {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+} 
+
+.missions-private-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  min-width: 200px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.missions-private-select:hover {
+  border-color: #8BC34A;
+}
+
+.missions-private-select:focus {
+  border-color: #8BC34A;
+  box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.1);
+}
+
+.missions-private-select option {
+  padding: 8px;
+  font-size: 14px;
+} 
+
+.missions-private-form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.missions-private-form-group {
+  margin-bottom: 20px;
+}
+
+.missions-private-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.missions-private-form-group input,
+.missions-private-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.missions-private-form-group input:focus,
+.missions-private-form-group select:focus {
+  border-color: #8BC34A;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.1);
+}
+
+.missions-private-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.missions-private-select-container {
+  display: flex;
+  gap: 10px;
+}
+
+.missions-private-select-container select {
+  flex: 1;
+}
+
+.missions-private-create-edit-btn {
+  padding: 0 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.missions-private-create-edit-btn:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.missions-private-form-actions {
+  display: flex;
+  /* justify-content: flex-end; */
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.missions-private-cancel-btn,
+.missions-private-submit-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.missions-private-cancel-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.missions-private-cancel-btn:hover {
+  background: #eee;
+}
+
+.missions-private-submit-btn {
+  background: #8BC34A;
+  border: none;
+  color: white;
+}
+
+.missions-private-submit-btn:hover {
+  background: #7CB342;
+}
+
+.missions-private-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.missions-private-error-message {
+  color: #f44336;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.missions-private-back-btn {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.missions-private-back-btn::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../public/assets/icons/previous.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.missions-private-back-btn:hover {
+  background: #eee;
+}
+
+.missions-private-submit-btn {
+  padding: 8px 16px;
+  background: #8BC34A;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missions-private-submit-btn::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../public/assets/icons/check.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+}
+
+.missions-private-cancel-btn {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missions-private-cancel-btn::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../public/assets/icons/previous.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.missions-private-create-edit-btn {
+  padding: 0 12px;
+  height: 36px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missions-private-create-edit-btn::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background-image: url('../../../../public/assets/icons/pencil.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} 

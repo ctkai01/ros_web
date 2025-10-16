@@ -1,0 +1,213 @@
+/* Dialog Request Field Styles */
+.dialog-field {
+  margin-bottom: 16px;
+}
+
+.dialog-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.dialog-input-container {
+  position: relative;
+}
+
+.dialog-input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.dialog-input-field:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.dialog-input-field:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.dialog-help-text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.dialog-error-text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.dialog-description-message {
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #495057;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Time Input Styles */
+.dialog-time-inputs {
+  width: 100%;
+}
+
+.time-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.time-input {
+  flex: 1;
+  text-align: center;
+}
+
+.time-input-with-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-up-button,
+.time-down-button {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+}
+
+.time-up-button:hover:not(:disabled),
+.time-down-button:hover:not(:disabled) {
+  background: #e9ecef;
+  color: #333;
+  border-color: #adb5bd;
+}
+
+.time-up-button:active:not(:disabled),
+.time-down-button:active:not(:disabled) {
+  background: #dee2e6;
+  transform: translateY(1px);
+}
+
+.time-up-button:disabled,
+.time-down-button:disabled {
+  background: #f8f9fa;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.time-input label {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.dialog-time-input {
+  width: 100%;
+  padding: 8px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.dialog-time-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.dialog-time-input:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.time-separator {
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+  margin-top: 20px;
+}
+
+.time-display {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #e9ecef;
+}
+
+/* Remove spinner buttons from number inputs */
+.dialog-time-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.dialog-time-input[type="number"]::-webkit-inner-spin-button,
+.dialog-time-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .time-input-group {
+    gap: 8px;
+  }
+  
+  .dialog-time-input {
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+  
+  .time-separator {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  
+  .time-display {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+}

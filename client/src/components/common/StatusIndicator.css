@@ -1,0 +1,91 @@
+/* Status Indicator Styles */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #979896;
+  font-family: 'Droid Sans', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  min-width: 80px;
+  white-space: nowrap;
+  /* Removed transition to prevent blinking */
+}
+
+/* Compact variant */
+.status-indicator.compact {
+  padding: 2px 6px;
+  font-size: 10px;
+  min-width: 60px;
+}
+
+/* Header variant */
+.status-indicator.header {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 10px;
+  min-width: 70px;
+}
+
+/* No animation - removed blinking effect */
+
+/* Status-specific text colors for better visibility */
+.status-indicator[style*="#c5f2ae"] {
+  /* READY - Green */
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.status-indicator[style*="#f7dc6f"] {
+  /* INITIALIZING/STARTING_NAV - Yellow */
+  color: #856404;
+  border-color: #ffeaa7;
+}
+
+.status-indicator[style*="#f39c12"] {
+  /* SLAM_ACTIVE - Orange */
+  color: #8b4513;
+  border-color: #fd7e14;
+}
+
+.status-indicator[style*="#f8c471"] {
+  /* SLAM_PAUSED/PAUSED - Light Orange */
+  color: #8b4513;
+  border-color: #fd7e14;
+}
+
+.status-indicator[style*="#e74c3c"] {
+  /* SYSTEM_ERROR - Red */
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.status-indicator[style*="#aed6f1"] {
+  /* RUNNING - Light Blue */
+  color: #004085;
+  border-color: #bee5eb;
+}
+
+.status-indicator[style*="#f2f2f2"] {
+  /* DISCONNECTED/PENDING/UNKNOWN - Gray */
+  color: #495057;
+  border-color: #979896;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .status-indicator {
+    font-size: 10px;
+    min-width: 60px;
+    padding: 3px 6px;
+  }
+  
+  .status-indicator.header {
+    font-size: 9px;
+    min-width: 50px;
+  }
+} 

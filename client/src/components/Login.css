@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+.login-page {
+  min-height: 100vh;
+  background: #0077be;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.login-container {
+  background: white;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+  padding: 0;
+  border-bottom: 1px solid white;
+  background-color: #0077be;
+  color: white;
+}
+
+.login-header h1 {
+  color: white;
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+.login-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+  padding: 0px;
+}
+
+.login-logo {
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.login-logo img {
+ background-image: url('../assets/icons/logo.jpg');
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center;
+ width: 100%;
+ height: 40px;
+ padding-bottom: 10px;
+ min-width: 100px;
+}
+
+.login-tabs-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-tabs-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.login-tabs button {
+  margin-top: 30px;
+  padding: 10px 16px;
+  border: none;
+  /* background: none; */
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px 4px 0px 0px;
+  font-weight: 500;
+
+}
+
+.login-tabs button.active {
+  background: white;
+  color: #333;
+  font-weight: 550;
+}
+
+.login-content {
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.login-instructions {
+  flex: 1;
+  gap: 10px;
+}
+
+.login-form {
+  flex: 1;
+}
+
+.login-content h2 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.login-tabs-info {
+  color: white;
+  margin: 30px 10px 10px 0;
+  font-size: 14px;
+  /* line-height: 1.5; */
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: 530;
+}
+
+.login-pincode-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  gap: 10px;
+}
+
+/* Mobile responsive for pincode input container */
+@media (max-width: 768px) {
+  .login-pincode-input-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+.login-pincode-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+
+}
+
+.numeric-keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  padding: 0px 15px;
+  
+}
+
+.keypad-row {
+  display: flex;
+  gap: 8px;
+}
+
+.keypad-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 43px;
+  height: 43px;
+}
+
+.keypad-button.numeric {
+  background: linear-gradient(135deg, #88d109, #6ba008);
+  color: white;
+}
+
+.keypad-button.numeric:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.keypad-button.numeric:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.keypad-button.zero {
+  min-width: 93px;
+}
+
+.keypad-button.action {
+  background: linear-gradient(135deg, #666, #555);
+  color: white;
+  font-size: 20px;
+}
+
+.keypad-button.action:hover {
+  background: linear-gradient(135deg, #555, #444);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.keypad-button.action:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pincode-display {
+  background: #f8f9fa;
+  border: 2px solid #ddd;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.login-info {
+  color: #333;
+  margin: 10px 0 5px 0;
+  font-size: 13px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  align-items: left;
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+  font-weight: 530;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 95%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0077be;
+}
+
+
+.form-group-pincode {
+  margin-bottom: 15px;
+}
+
+.form-group-pincode label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group-pincode input {
+  width: 40px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-pincode input:focus {
+  outline: none;
+  border-color: #0077be;
+}
+
+
+.login-button {
+  background: #76b900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.key-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.login-button:hover {
+  background: #669e00;
+}
+
+.login-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-bottom: 15px;
+  font-size: 14px;
+} 

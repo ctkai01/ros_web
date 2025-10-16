@@ -1,0 +1,49 @@
+.docking-panel-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.docking-panel-nav.dragging {
+  opacity: 0.8;
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+}
+
+.docking-panel-nav.drag-over {
+  border: 2px dashed #3498db;
+  background-color: #f0f7ff;
+  transform: scale(1.01);
+}
+
+.docking-panel-nav.drag-over::after {
+  content: 'Drop here to merge actions';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3498db;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Hover effects */
+.docking-copy-button:hover,
+.docking-settings-button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Active state */
+.docking-copy-button:active,
+.docking-settings-button:active {
+  transform: scale(0.95);
+}

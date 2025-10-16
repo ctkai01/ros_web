@@ -1,0 +1,193 @@
+/* Drop Indicator Styles */
+.drop-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #007bff;
+  border-radius: 1px;
+  z-index: 1000;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 4px rgba(33, 150, 243, 0.5);
+}
+
+.drop-indicator::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(33, 150, 243, 0.5);
+}
+
+.drop-indicator::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(33, 150, 243, 0.5);
+}
+
+/* Dynamic Drag Zone Styles */
+.dynamic-drag-zone {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 123, 255, 0.3);
+  border: 2px dashed #007bff;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.dynamic-drag-zone::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.dynamic-drag-zone::after {
+  content: 'Drop here';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #007bff;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  margin-top: 25px;
+}
+
+/* Dropzone Styles for ActionContainer */
+.dropzone {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 123, 255, 0.1);
+  border: 1px dashed #007bff;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+}
+
+.dropzone.active {
+  background-color: rgba(0, 123, 255, 0.3);
+  border: 2px dashed #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  animation: dropzonePulse 1s ease-in-out infinite;
+}
+
+.dropzone-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dropzone-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #007bff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
+}
+
+.dropzone-text {
+  color: #007bff;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+/* Container for drop indicators */
+.action-child-item {
+  position: relative;
+}
+
+/* .action-child-item.dragging {
+  visibility: hidden;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+} */
+
+
+.action-child-item.dragging 
+.action-child-item.drag-over
+.action-child-item.drag-enter {
+  visibility: hidden;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin-bottom: 0 !important;
+} 
+
+/* Drop zone highlighting */
+.action-child-item.drop-zone-active {
+  /* background-color: rgba(33, 150, 243, 0.05); */
+  border: 1px dashed #2196F3;
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+/* Animation for drop indicator */
+@keyframes dropIndicatorPulse {
+  0% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+  100% { opacity: 0.6; transform: scaleY(1); }
+}
+
+.drop-indicator {
+  animation: dropIndicatorPulse 1s ease-in-out infinite;
+}
+
+/* Animation for dynamic drag zone */
+@keyframes dynamicDragZonePulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+.dynamic-drag-zone {
+  animation: dynamicDragZonePulse 1.5s ease-in-out infinite;
+}
+
+/* Animation for dropzone */
+@keyframes dropzonePulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.01); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+
+
+
+ 

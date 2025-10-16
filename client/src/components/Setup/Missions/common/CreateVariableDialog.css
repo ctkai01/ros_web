@@ -1,0 +1,302 @@
+/* Create Variable Dialog Styles */
+
+.create-variable-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2001;
+}
+
+.create-variable-dialog {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 450px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-variable-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.create-variable-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-variable-icon {
+  font-size: 20px;
+}
+
+.create-variable-title h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.create-variable-content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.create-variable-instructions {
+  margin-bottom: 24px;
+}
+
+.create-variable-instructions p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+
+.create-variable-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-variable-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-variable-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.create-variable-input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.create-variable-input:focus {
+  outline: none;
+  border-color: #cb81d6;
+  box-shadow: 0 0 0 2px rgba(203, 129, 214, 0.2);
+}
+
+.create-variable-input::placeholder {
+  color: #999;
+}
+
+.create-variable-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.create-variable-ok-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 80px;
+}
+
+.create-variable-ok-button:hover {
+  background-color: #218838;
+}
+
+.create-variable-cancel-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 80px;
+}
+.create-variable-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../../../public/assets/icons/settings-black.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.create-variable-cancel-button:hover {
+  background-color: #5a6268;
+}
+
+/* Time Input Styles for Create/Edit Variable Dialog */
+.create-variable-time-inputs {
+  width: 100%;
+}
+
+.time-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.time-input {
+  flex: 1;
+  text-align: center;
+}
+
+.time-input-with-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-up-button,
+.time-down-button {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+}
+
+.time-up-button:hover:not(:disabled),
+.time-down-button:hover:not(:disabled) {
+  background: #e9ecef;
+  color: #333;
+  border-color: #adb5bd;
+}
+
+.time-up-button:active:not(:disabled),
+.time-down-button:active:not(:disabled) {
+  background: #dee2e6;
+  transform: translateY(1px);
+}
+
+.time-input label {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.create-variable-time-input {
+  width: 100%;
+  padding: 8px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.create-variable-time-input:focus {
+  outline: none;
+  border-color: #cb81d6;
+  box-shadow: 0 0 0 2px rgba(203, 129, 214, 0.2);
+}
+
+.time-separator {
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+  margin-top: 20px;
+}
+
+.time-display {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #e9ecef;
+}
+
+/* Remove spinner buttons from number inputs */
+.create-variable-time-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.create-variable-time-input[type="number"]::-webkit-inner-spin-button,
+.create-variable-time-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .create-variable-dialog {
+    width: 95%;
+    max-width: none;
+    margin: 20px;
+  }
+  
+  .create-variable-content {
+    padding: 16px;
+  }
+  
+  .create-variable-header,
+  .create-variable-footer {
+    padding: 16px 20px;
+  }
+  
+  .time-input-group {
+    gap: 8px;
+  }
+  
+  .create-variable-time-input {
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+  
+  .time-separator {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  
+  .time-display {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+}

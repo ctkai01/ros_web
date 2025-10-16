@@ -1,0 +1,8 @@
+/* Import common navigation styles */
+@import '../common/Navigation.css';
+
+/* Setup-specific overrides if needed */
+.setup-nav {
+    /* Inherits all styles from .nav-common */
+} 
+

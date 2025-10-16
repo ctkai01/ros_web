@@ -1,0 +1,216 @@
+.setup-container {
+    display: flex;
+    /* min-height: 100vh; */
+    height:       calc(var(--viewport-height, 100vh) - 60px);
+    background-color: #f5f5f5;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Dynamic viewport height will be set via JavaScript */
+.setup-container.dynamic-height {
+    min-height: var(--viewport-height, 100vh);
+}
+
+.setup-container.nav-expanded .setup-nav {
+    left: 100px;
+}
+
+.setup-container.nav-expanded .setup-content {
+    margin-left: 180px;
+}
+.setup-content
+{
+    flex: 1;
+    margin-left: 60px;
+     overflow-y: auto; 
+    transition: margin-left 0.3s ease;
+    height: calc(var(--viewport-height, 100vh) - 60px);
+    max-height: calc(var(--viewport-height, 100vh) - 60px);
+    box-sizing: border-box;
+}
+
+.setup-nav {
+    width: -180px;
+    background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+    padding: 20px 0;
+    height: 100vh;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    transition: left 0.3s ease;
+    z-index: 100;
+    
+}
+.setup-nav.show {
+    left: 60px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+/* Mobile Navigation Controls */
+.nav-toggle {
+    display: none;
+    position: fixed;
+    left: 60px;
+    
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #005587;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+   
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-toggle.collapsed::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  /* Tablet (768px - 1024px) */
+  @media screen and (max-width: 1024px) {
+    .nav-toggle {
+      display: block;
+    }
+  
+    .setup-nav {
+      position: fixed;
+      left: -180px;
+      top: 0;
+      bottom: 0;
+      width: 180px;
+      padding: 20px;
+      margin: 0;
+      background-color: #f8f9fa;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      transition: left 0.3s ease;
+    }
+    
+    .setup-content {
+      margin-left: 40px;
+    }
+  
+    .setup-nav.show {
+      left: 60px;
+      transition: all 0.3s ease;
+    }
+  
+    .setup-nav-item {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  
+    .setup-nav-item .icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    /* Overlay when nav is shown */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+  
+    .nav-overlay.show {
+      display: block;
+    }
+  }
+  
+  /* Mobile (up to 767px) */
+  @media screen and (max-width: 767px) {
+    .nav-toggle {
+      display: block;
+    }
+  
+    .setup-nav {
+      position: fixed;
+      left: -180px;
+      top: 0;
+      bottom: 0;
+      width: 180px;
+      padding: 20px;
+      margin: 0;
+      background-color: #f8f9fa;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      transition: left 0.3s ease;
+    }
+    .setup-content
+    {
+        margin-left: 40px;
+    }
+  
+    .setup-nav.show {
+      left: 60px;
+      transition: all 0.3s ease;
+    }
+  
+    .setup-nav-item {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  
+    .setup-nav-item .icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    /* Overlay when nav is shown */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+  
+    .nav-overlay.show {
+      display: block;
+    }
+  }
+  
+  /* Small Mobile (up to 480px) */
+  @media screen and (max-width: 480px) {
+    .setup-nav {
+        position: fixed;
+        left: -180px;
+        top: 0;
+        bottom: 0;
+        width: 180px;
+        padding: 20px;
+        margin: 0;
+        background-color: #f8f9fa;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: left 0.3s ease;
+      }
+  
+    .nav-toggle {
+      left: 5px;
+    }
+  } 
