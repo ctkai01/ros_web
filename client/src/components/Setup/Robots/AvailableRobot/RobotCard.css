@@ -1,0 +1,114 @@
+/* Thẻ chính */
+.robot-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  color: #fff;
+  position: relative; /* Quan trọng để định vị dải băng */
+  overflow: hidden; /* Quan trọng để cắt dải băng */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-ribbon-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px; /* Kích thước của khu vực click */
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Dùng ::before để vẽ hình tam giác */
+.close-ribbon-wrapper::before {
+  content: ''; /* Bắt buộc phải có */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  
+  /* Đây là "mẹo" chính:
+     - border-top tạo phần màu đỏ.
+     - border-right trong suốt sẽ tạo ra đường cắt chéo.
+  */
+  border-top: 40px solid #c0392b; /* Màu đỏ sẫm */
+  border-right: 40px solid transparent;
+
+  transition: border-top-color 0.2s ease;
+}
+
+/* Hiệu ứng khi hover */
+.close-ribbon-wrapper:hover::before {
+  border-top-color: #e74c3c; /* Đổi sang màu đỏ tươi */
+}
+
+/* Định vị lại icon X cho chính xác */
+.close-icon {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  color: white;
+  /* Quan trọng: Ngăn icon bắt sự kiện click, để click được truyền xuống wrapper */
+  pointer-events: none; 
+}
+
+/* Tiêu đề của card (R717) */
+.robot-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px; /* Tạo không gian với dải băng */
+  margin-bottom: 20px;
+}
+
+/* Phần thông tin chi tiết */
+.robot-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Khoảng cách giữa các dòng */
+  margin-bottom: 25px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.detail-key {
+  color: #aaa; /* Màu xám cho key */
+}
+
+.detail-value {
+  color: #fff; /* Màu trắng cho value */
+  font-weight: 500;
+}
+
+/* Nút "Add robot" */
+.add-robot-button-container .add-robot-group-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Khoảng cách giữa icon và chữ */
+  max-width: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.add-robot-group-btn:hover {
+  background-color: #2980b9;
+}
+
+.add-robot-button-container {
+  display: flex;
+  justify-content: flex-end;
+}

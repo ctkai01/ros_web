@@ -26,8 +26,10 @@ import Users from './Users/Users';
 import EditUser from './Users/EditUser';
 
 import './Setup.css';
-import Schedule from './Schedule';
+import Schedule from './Schedule/Schedule';
 import CreateSchedule from './Schedule/CreateSchedule';
+import { EditSchedule } from './Schedule';
+import { Robots } from './Robots';
 
 // Placeholder components for each setup section
 const Paths = () => <div>Paths Content</div>;
@@ -67,7 +69,10 @@ const Setup = ({ isNavOpen }) => {
           <Route path="sites/create" element={<CreateSite />} />
           <Route path="sites/edit/:id" element={<EditSite />} />
           <Route path="schedule" element={<Schedule />} />
+          <Route path="schedule/edit/:id" element={<EditSchedule />} />
           <Route path="schedule/create" element={<CreateSchedule />} />
+
+          <Route path="robots" element={<Robots />} />
         </Routes>
       </div>
     </div>

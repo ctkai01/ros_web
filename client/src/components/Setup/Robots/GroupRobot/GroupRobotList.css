@@ -1,0 +1,16 @@
+
+
+.title {
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.robot-list {
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}

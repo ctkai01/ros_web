@@ -1,0 +1,90 @@
+.add-robot-modal.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.add-robot-modal .modal-content {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  padding: 25px;
+  border-radius: 8px;
+  width: 550px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.add-robot-modal .modal-header h2 {
+  margin-top: 0;
+  color: #fff;
+}
+.add-robot-modal .modal-header p {
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.add-robot-modal .form-groups {
+  margin-bottom: 20px;
+}
+.add-robot-modal .form-groups label {
+  display: block;
+  color: #ccc;
+}
+.add-robot-modal .select-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.add-robot-modal .select-wrapper select {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #3c3c3c;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+}
+.add-robot-modal .create-edit-btn {
+  padding: 10px;
+  background-color: #555;
+  border: 1px solid #666;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-robot-modal .checkbox-groups {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.add-robot-modal .checkbox-groups input {
+  width: 18px;
+  height: 18px;
+}
+
+.add-robot-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.add-robot-modal .modal-footer button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.add-robot-modal .btn-oks {
+  background-color: #3498db;
+  color: white;
+}
+.add-robot-modal .btn-cancels {
+  background-color: #6c757d;
+  color: white;
+}

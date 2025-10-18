@@ -10,7 +10,7 @@ const mockRobotData = [
   { id: 3, name: "Robot Gamma" },
   { id: 4, name: "Robot Delta" },
 ];
-const CreateSchedule = () => {
+const EditSchedule = () => {
   const navigate = useNavigate();
   const [missionGroups, setMissionGroups] = useState([]);
   const [missionGroupSelected, setMissionGroupSelected] = useState(null);
@@ -122,7 +122,7 @@ const CreateSchedule = () => {
     console.log("Form submitted with data: ", result);
     // setLoading(true);
 
-    // console.log("🔄 CreateSchedule: formData:", formData);
+    // console.log("🔄 EditSchedule: formData:", formData);
 
     // // Validate required fields
     // if (!formData.name || !formData.groupId || !formData.siteId) {
@@ -142,7 +142,7 @@ const CreateSchedule = () => {
     //   };
 
     //   console.log(
-    //     "🔄 CreateSchedule: requestData:",
+    //     "🔄 EditSchedule: requestData:",
     //     JSON.stringify(requestData)
     //   );
     //   const token = localStorage.getItem("token");
@@ -220,11 +220,11 @@ const CreateSchedule = () => {
     <div className="create-schedule-page">
       <div className="page-header">
         <div className="header-title">
-          <h2>Schedule a mission</h2>
-          <span className="subtitle">
+          <h2>Edit Schedule for mission</h2>
+          {/* <span className="subtitle">
             Schedule a mission by selecting the earliest start, a robot group
             and what priority the mission should have
-          </span>
+          </span> */}
         </div>
         <div className="header-buttons">
           <button className="btn-go-back" onClick={handleCancel}>
@@ -396,7 +396,7 @@ const CreateSchedule = () => {
             ) : (
               <>
                 <span className="save-icon"></span>
-                Create Schedule
+                Update Schedule
               </>
             )}
           </button>
@@ -415,4 +415,4 @@ const CreateSchedule = () => {
   );
 };
 
-export default CreateSchedule;
+export default EditSchedule;

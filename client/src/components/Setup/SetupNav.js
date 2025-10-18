@@ -24,6 +24,7 @@ const SetupNav = () => {
 
   const menuItems = [
     { label: "Schedule", path: "/setup/schedule" },
+    { label: "Robots", path: "/setup/robots" },
     { label: "Missions", path: "/setup/missions" },
     { label: "Maps", path: "/setup/maps" },
     { label: "Footprints", path: "/setup/footprints" },
