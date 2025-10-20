@@ -29,13 +29,28 @@
   font-size: 0.9em;
 }
 
-.add-robot-modal .form-groups {
+/* --- SỬA ĐỔI VÀ BỔ SUNG CSS --- */
+/* Đổi tên class số nhiều thành số ít và thêm margin */
+.add-robot-modal .form-group {
   margin-bottom: 20px;
 }
-.add-robot-modal .form-groups label {
+.add-robot-modal .form-group label {
   display: block;
+  margin-bottom: 8px; /* Thêm khoảng cách giữa label và input */
   color: #ccc;
 }
+
+/* Thêm style cho input text */
+.add-robot-modal .form-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
+
 .add-robot-modal .select-wrapper {
   display: flex;
   gap: 10px;
@@ -57,14 +72,19 @@
   cursor: pointer;
 }
 
-.add-robot-modal .checkbox-groups {
+/* Đổi tên class số nhiều thành số ít */
+.add-robot-modal .checkbox-group {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.add-robot-modal .checkbox-groups input {
-  width: 18px;
-  height: 18px;
+.add-robot-modal .checkbox-group input {
+  width: 16px; /* Giảm kích thước checkbox một chút */
+  height: 16px;
+  margin: 0;
+}
+.add-robot-modal .checkbox-group label {
+  margin-bottom: 0; /* Bỏ margin-bottom cho label của checkbox */
 }
 
 .add-robot-modal .modal-footer {
@@ -80,11 +100,13 @@
   font-weight: bold;
   cursor: pointer;
 }
-.add-robot-modal .btn-oks {
+.add-robot-modal .btn-ok { /* Đổi tên class */
   background-color: #3498db;
   color: white;
 }
-.add-robot-modal .btn-cancels {
-  background-color: #6c757d;
-  color: white;
+/* Sửa style cho nút Cancel */
+.add-robot-modal .btn-cancels { /* Đổi tên class */
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #ccc;
 }

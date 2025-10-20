@@ -1,0 +1,77 @@
+/* Tổng thể form */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem; /* Thêm padding để thoáng hơn */
+}
+
+/* Tiêu đề "Edit Information" */
+.edit-form-title {
+  font-size: 1.5rem; /* 24px */
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #333; /* Màu chữ chính */
+}
+
+/* Label cho ô input */
+.edit-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555; /* Màu xám cho label */
+}
+
+/* Ô input */
+.edit-form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem; /* 16px */
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+/* Hiệu ứng khi focus vào input */
+.edit-form-input:focus {
+  outline: none;
+  border-color: #3498db; /* Đổi màu viền sang xanh */
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Khu vực chứa các nút */
+.edit-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Style chung cho nút */
+.edit-form-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem; /* 14.4px */
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Nút Cancel (Thứ cấp) */
+.btn-secondary {
+  background-color: #fff;
+  color: #666;
+  border-color: #ccc;
+}
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+/* Nút Update (Chính) */
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+}

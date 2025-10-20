@@ -18,7 +18,7 @@ const MapWidgetComponent = ({ widget, onEdit }) => {
   const currentMapData = useRef(null);
   const wsRef = useRef(null);
   const mapChangeWsRef = useRef(null);
-
+  console.log('Rendering MapWidgetComponent with widget:', widget);
   const setGlobalCurrentSite = (siteId) => {
     globalCurrentSiteId = siteId;
     currentSiteId.current = siteId;

@@ -2,30 +2,8 @@ import React, { useState } from "react"; // 1. Import useState
 import "./GroupRobotList.css";
 import RobotCard from "./RobotCard";
 
-const myRobotData = [
-  {
-    id: "r717",
-    name: "R717",
-    version: "2.4.0",
-    ip: "192.168.15.115",
-    model: "MiR100",
-    fleetState: "Asynchronous",
-    state: "Pause",
-    battery: "85%",
-  },
-  {
-    id: "r718",
-    name: "R718",
-    version: "2.4.0",
-    ip: "192.168.15.116",
-    model: "MiR100",
-    fleetState: "Asynchronous",
-    state: "Start",
-    battery: "55%",
-  },
-];
 
-function GroupRobotList() {
+function GroupRobotList({ groupRobot , handleViewDetailsRobot }) {
   // 3. Tạo state để quản lý việc hiển thị modal
   // State để lưu thông tin robot được chọn (nếu cần)
   const [selectedRobot, setSelectedRobot] = useState(null);
@@ -38,16 +16,15 @@ function GroupRobotList() {
   const handleShowInfoRobot = (robot) => {
     console.log("Showing info for robot:", robot.name);
     setSelectedRobot(robot); // Lưu robot được chọn
+    handleViewDetailsRobot(robot.id); // Gọi hàm từ props để xử lý xem chi tiết
   };
-
-
 
   return (
     <div>
-      <div className="title">AMG MIR</div>
+      <div className="title">{groupRobot.name}</div>
 
       <div className="robot-list">
-        {myRobotData.map((robot) => {
+        {groupRobot.robots.map((robot) => {
           return (
             <RobotCard
               key={robot.id} // Thêm key để React quản lý list hiệu quả

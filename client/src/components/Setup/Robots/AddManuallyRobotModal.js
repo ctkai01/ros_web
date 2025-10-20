@@ -3,21 +3,29 @@ import "./AddManuallyRobotModal.css";
 
 const AddManuallyRobotModal = ({ onApply, onClose }) => {
   return (
-    // Lớp phủ nền
     <div className="add-robot-modal modal-overlay">
-      {/* Nội dung popup */}
       <div className="modal-content">
         <div className="modal-header">
-          <h2>Add robot to a group</h2>
+          <h2>Add robot manually</h2>
           <p>
-            Add the selected robot to a group in the fleet. Deselect Active in
-            MiR Fleet if the robot should not be part of the active fleet.
+            Add a robot manually by entering the robot's IP-address and select a
+            robot group it should belong to. Deselect Active in MiRFleet, if the
+            robot should not be part of the active fleet.
           </p>
         </div>
 
         <div className="modal-body">
-          <div className="form-groups">
-            <label htmlFor="robot-group">Select a robot group</label>
+          {/* --- SỬA ĐỔI BẮT ĐẦU TỪ ĐÂY --- */}
+
+          {/* 1. Thêm input cho IP */}
+          <div className="form-group">
+            <label htmlFor="robot-ip">Robot's IP address:</label>
+            <input type="text" id="robot-ip" />
+          </div>
+
+          {/* 2. Sửa lại nhóm Select */}
+          <div className="form-group">
+            <label htmlFor="robot-group">Select a robot group:</label>
             <div className="select-wrapper">
               <select id="robot-group">
                 <option>Default robot group</option>
@@ -25,20 +33,10 @@ const AddManuallyRobotModal = ({ onApply, onClose }) => {
               <button className="create-edit-btn">Create / Edit</button>
             </div>
           </div>
-          <div className="form-groups checkbox-groups">
-            <input type="checkbox" id="active-fleet" defaultChecked />
-            <label htmlFor="active-fleet">Active in MiR Fleet</label>
-          </div>
-          <div className="form-groups checkbox-groups">
-            <input type="checkbox" id="factory-reset" />
-            <label htmlFor="factory-reset">
-              Factory reset the robot before adding it to the fleet.
-            </label>
-          </div>
         </div>
 
         <div className="modal-footer">
-          <button className="btn-oks" onClick={onApply}>
+          <button className="btn-ok" onClick={onApply}>
             OK
           </button>
           <button className="btn-cancels" onClick={onClose}>

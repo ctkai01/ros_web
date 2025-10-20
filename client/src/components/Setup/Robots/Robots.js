@@ -9,13 +9,78 @@ import AvailableRobotList from "./AvailableRobot/AvailableRobotList";
 import GroupRobotList from "./GroupRobot";
 import AddManuallyRobotModal from "./AddManuallyRobotModal";
 
+const myRobotData = [
+  {
+    id: "rb-group-1",
+    name: "Robot Group 1",
+    robots: [
+      {
+        id: "r717",
+        name: "R717",
+        version: "2.4.0",
+        ip: "192.168.15.115",
+        model: "MiR100",
+        fleetState: "Asynchronous",
+        state: "Pause",
+        battery: "85%",
+      },
+      {
+        id: "r718",
+        name: "R718",
+        version: "2.4.0",
+        ip: "192.168.15.116",
+        model: "MiR100",
+        fleetState: "Asynchronous",
+        state: "Start",
+        battery: "55%",
+      },
+      {
+        id: "r78",
+        name: "R720",
+        version: "2.4.0",
+        ip: "192.168.15.119",
+        model: "MiR100",
+        fleetState: "Asynchronous",
+        state: "Start",
+        battery: "55%",
+      },
+    ],
+  },
+  {
+    id: "rb-group-2",
+    name: "Robot MiR",
+    robots: [
+      {
+        id: "r718",
+        name: "R717",
+        version: "2.4.0",
+        ip: "192.168.15.113",
+        model: "MiR100",
+        fleetState: "Asynchronous",
+        state: "Start",
+        battery: "85%",
+      },
+      {
+        id: "r291",
+        name: "R718",
+        version: "2.4.0",
+        ip: "192.168.15.111",
+        model: "MiR100",
+        fleetState: "Asynchronous",
+        state: "Start",
+        battery: "55%",
+      },
+    ],
+  },
+];
+
 const Robots = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [messageData, setMessageData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [isModalOpenAddManually, setIsModalOpenAddManually] = useState(false);
-
+  const [groupRobotData, setGroupRobotData] = useState(myRobotData);
   const [error, setError] = useState(null);
   const [confirmData, setConfirmData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -43,9 +108,12 @@ const Robots = () => {
 
   const handleCloseModalAddRobotManually = () => {
     setIsModalOpenAddManually(false);
-  }
+  };
 
-  
+  const handleViewDetailsRobot = (id) => {
+    console.log("View details robot with ID:", id);
+    navigate(`/setup/robots/${id}`);
+  };
 
   return (
     <div className="robots-private-container">
@@ -158,7 +226,15 @@ const Robots = () => {
         </div>
         <div className="robots-private-main-content">
           <AvailableRobotList />
-          <GroupRobotList />
+          {groupRobotData.map((groupRobot) => {
+            return (
+              <GroupRobotList
+                key={groupRobot.id}
+                groupRobot={groupRobot}
+                handleViewDetailsRobot={handleViewDetailsRobot}
+              />
+            );
+          })}
         </div>
       </div>
 

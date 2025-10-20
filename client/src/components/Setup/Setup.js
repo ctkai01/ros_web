@@ -30,6 +30,7 @@ import Schedule from './Schedule/Schedule';
 import CreateSchedule from './Schedule/CreateSchedule';
 import { EditSchedule } from './Schedule';
 import { Robots } from './Robots';
+import DetailsRobot from './Robots/DetailsRobot';
 
 // Placeholder components for each setup section
 const Paths = () => <div>Paths Content</div>;
@@ -73,6 +74,7 @@ const Setup = ({ isNavOpen }) => {
           <Route path="schedule/create" element={<CreateSchedule />} />
 
           <Route path="robots" element={<Robots />} />
+          <Route path="robots/:id" element={<DetailsRobot />} />
         </Routes>
       </div>
     </div>

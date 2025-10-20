@@ -1,0 +1,58 @@
+/* Khung chính của panel - ĐÃ THAY ĐỔI */
+.info-robot-panel {
+  background-color: #ffffff; /* 1. Đổi nền thành màu trắng */
+  color: #212529; /* 2. Đổi màu chữ mặc định thành màu đen/xám đậm */
+  border: 1px solid #dee2e6; /* (Tùy chọn) Thêm viền mờ cho đẹp hơn */
+  border-radius: 8px;
+  padding: 10px 20px;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* (Tùy chọn) Giảm shadow cho nhẹ nhàng hơn */
+}
+
+/* Mỗi hàng thông tin */
+.info-robot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef; /* 3. Đổi màu đường kẻ thành xám rất nhạt */
+}
+
+/* Loại bỏ đường kẻ ở hàng cuối cùng */
+.info-robot-panel .info-robot-row:last-child {
+  border-bottom: none;
+}
+
+/* Phần key (bên trái) - ĐÃ THAY ĐỔI */
+.info-robot-key {
+  color: #6c7d72; /* 4. Đổi màu key thành xám vừa phải */
+}
+
+/* Phần value (bên phải) */
+.info-robot-value-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-robot-value {
+  font-weight: 500;
+  color: #212529; /* Đảm bảo màu value là màu chữ chính */
+}
+
+/* Nút Edit (không đổi) */
+.robot-edit-btn {   
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.robot-edit-btn:hover {
+  background-color: #2980b9;
+}

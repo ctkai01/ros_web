@@ -258,6 +258,10 @@ export class Map2D {
       // get container size
       const width = this.container.clientWidth;
       const height = this.container.clientHeight;
+
+      console.log("Wid: ", width);
+      console.log("Hei: ", height);
+
       if (!width || !height) {
         console.error("Invalid container dimensions:", { width, height });
         return false;
@@ -450,10 +454,12 @@ export class Map2D {
     this.mapData = null;
     this.mapInfo = null;
 
-    // Reset camera to default position
-    this.camera.position.x = 0;
-    this.camera.position.y = 0;
-    this.updateZoom(this.MAP_SETTINGS.DEFAULT_ZOOM);
+    if (this.camera) {
+      // Reset camera to default position
+      this.camera.position.x = 0;
+      this.camera.position.y = 0;
+      this.updateZoom(this.MAP_SETTINGS.DEFAULT_ZOOM);
+    }
 
     // Clear robot if exists
     if (this.robot) {
