@@ -1,4 +1,4 @@
-.modal-overlay {
+.modal-overlay-common {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   z-index: 99999;
 }
 
-.modal-content {
+.modal-overlay-common .modal-content {
   /* background-color: #2d2d2d; */
   color: #e0e0e0;
   padding: 2rem;
@@ -22,7 +22,7 @@
   max-width: 500px;
 }
 
-.modal-close-btn {
+.modal-overlay-common .modal-close-btn {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -34,6 +34,5 @@
   transition: color 0.2s;
 }
 
-.modal-close-btn:hover {
-  color: #fff;
-}
+/* .modal-overlay-common .modal-close-btn:hover {
+} */

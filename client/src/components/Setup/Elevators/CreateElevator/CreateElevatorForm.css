@@ -1,0 +1,83 @@
+
+
+/* Thẻ form chính - ĐÃ THAY ĐỔI */
+.create-elevator-form {
+  background-color: #ffffff; /* 1. Đổi nền thành màu trắng */
+  padding: 2rem;
+  border-radius: 8px;
+  color: #333; /* 2. Đổi màu chữ chính thành đen/xám đậm */
+  border: 1px solid #dee2e6; /* 3. Thêm viền xám nhạt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 4. Shadow nhẹ */
+}
+
+/* Layout 2 cột */
+.create-elevator-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Mỗi nhóm form (label + input) */
+.create-elevator-form .form-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.create-elevator-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555; /* 5. Đổi màu label thành xám đậm */
+}
+
+/* Style cho icon "i" (info) */
+.create-elevator-form .form-group label svg {
+  color: #999; /* 6. Đổi màu icon thành xám nhạt */
+}
+
+/* Style chung cho input và select - ĐÃ THAY ĐỔI */
+.create-elevator-form .form-input,
+.create-elevator-form .form-select {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff; /* 7. Nền input màu trắng */
+  border: 1px solid #ced4da; /* 8. Viền input xám nhạt */
+  border-radius: 6px;
+  color: #333; /* 9. Màu chữ gõ vào là màu đen */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hiệu ứng khi focus */
+.create-elevator-form .form-input:focus,
+.create-elevator-form .form-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.create-elevator-form .form-input::placeholder {
+  color: #999; /* 10. Màu placeholder xám nhạt */
+}
+
+/* Nút Create (Giữ nguyên, màu xanh vẫn đẹp trên nền trắng) */
+.create-elevator-form .create-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.create-elevator-form .create-btn:hover {
+  background-color: #2980b9;
+}

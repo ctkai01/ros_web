@@ -1,3 +1,3 @@
 import Robots from "./Robots"
 
-export { Robots }
+export default Robots 

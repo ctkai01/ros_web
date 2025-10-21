@@ -1,0 +1,90 @@
+/* Nền chính (tham khảo) */
+
+
+/* Container chính của danh sách */
+.sound-list-container {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  /* max-width: 1000px; */
+  /* margin: auto; */
+  overflow: hidden; /* Để bo góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Layout chung cho header và các hàng */
+.sound-list-header,
+.sound-list-row {
+  display: grid;
+  /* Định nghĩa các cột */
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr;
+  gap: 16px;
+  padding: 16px 20px;
+  align-items: center;
+}
+
+/* Định dạng Header */
+.sound-list-header {
+  background-color: #f8f9fa; /* Nền xám rất nhạt */
+  color: #6c757d;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Định dạng cho từng hàng */
+.sound-list-row {
+  color: #333;
+  border-bottom: 1px solid #e9ecef;
+}
+/* Bỏ đường kẻ ở hàng cuối cùng */
+.sound-list-container .sound-list-row:last-child {
+  border-bottom: none;
+}
+
+/* Cột Name */
+.sound-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+.sound-name-icon {
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+/* Cột Functions */
+.sound-functions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Nút bấm trong cột Functions */
+.function-btn {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  color: #6c757d;
+  border-radius: 5px;
+  /* width: 32px;
+  height: 32px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.function-btn:hover {
+  background-color: #f1f3f5;
+}
+
+/* Nút Xóa (màu đỏ) */
+.function-btn.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+.function-btn.btn-danger:hover {
+  background-color: #c0392b;
+}

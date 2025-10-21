@@ -1,0 +1,73 @@
+/* Hộp thoại chính - ĐÃ THAY ĐỔI */
+.delete-elevator-confirmation-box {
+  background-color: #ffffff; /* 1. Đổi nền thành trắng */
+  width: 100%;
+  border-radius: 8px;
+  color: #333; /* 3. Đổi màu chữ chính thành đen */
+}
+
+/* Dải header màu đỏ (Giữ nguyên) */
+.delete-elevator-confirmation-box .delete-header-bar {
+  background-color: #c0392b; 
+  height: 10px;
+}
+
+/* Phần body chứa text */
+.delete-elevator-confirmation-box .delete-body {
+  padding: 24px 28px;
+  text-align: center;
+}
+
+/* Tiêu đề - ĐÃ THAY ĐỔI */
+.delete-elevator-confirmation-box .delete-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333; /* 4. Đổi màu tiêu đề */
+}
+
+/* Text mô tả - ĐÃ THAY ĐỔI */
+.delete-elevator-confirmation-box .delete-text {
+  font-size: 1rem;
+  color: #6c757d; /* 5. Đổi màu text thành xám đậm */
+  margin-bottom: 24px;
+}
+
+/* Khu vực chứa các nút */
+.delete-elevator-confirmation-box .delete-footer {
+  display: flex;
+  gap: 12px;
+  padding: 0 28px 24px;
+}
+
+/* Style chung cho nút (Giữ nguyên) */
+.delete-elevator-confirmation-box .modal-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* Nút Cancel (Giữ nguyên, đã là nền trắng) */
+.delete-elevator-confirmation-box .btn-secondary {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #ccc;
+}
+.delete-elevator-confirmation-box .btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+/* Nút Delete (Giữ nguyên, màu đỏ vẫn phù hợp) */
+.delete-elevator-confirmation-box .btn-danger {
+  background-color: #c0392b;
+  color: white;
+}
+.delete-elevator-confirmation-box.btn-danger:hover {
+  background-color: #a93226;
+}

@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
   return (
     // Lớp phủ nền tối, khi click sẽ đóng modal
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay-common" onClick={onClose}>
       {/* Nội dung modal, ngăn sự kiện click lan ra lớp phủ 
         để tránh modal bị đóng khi click vào bên trong
       */}

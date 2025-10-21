@@ -1,0 +1,151 @@
+/* Nền chính (tham khảo) */
+
+/* Form chính - ĐÃ THAY ĐỔI */
+.update-elevator-form {
+  background-color: #ffffff; /* 1. Nền trắng */
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6; /* 2. Thêm viền xám nhạt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 3. Shadow nhẹ */
+}
+
+/* Các nhóm form cơ bản */
+.update-elevator-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+.update-elevator-form .form-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+.update-elevator-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555; /* 4. Chữ xám đậm */
+}
+
+/* Style cho input và select - ĐÃ THAY ĐỔI */
+.update-elevator-form .form-input,
+.update-elevator-form .form-select {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff; /* 5. Nền trắng */
+  border: 1px solid #ced4da; /* 6. Viền xám nhạt */
+  border-radius: 6px;
+  color: #333; /* 7. Chữ đen */
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Thêm hiệu ứng focus cho nền sáng */
+.update-elevator-form .form-input:focus,
+.update-elevator-form .form-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Header của phần danh sách tầng - ĐÃ THAY ĐỔI */
+.update-elevator-form .floor-header {
+  background-color: #f8f9fa; /* 8. Nền xám rất nhạt */
+  color: #6c757d; /* 9. Chữ xám vừa */
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 40px;
+  gap: 10px;
+  align-items: center;
+}
+.update-elevator-form .floor-header label {
+  margin: 0;
+}
+
+/* Mỗi hàng tầng trong danh sách - ĐÃ THAY ĐỔI */
+.update-elevator-form .floor-row {
+  background-color: #ffffff; /* 10. Nền trắng */
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 40px;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid #dee2e6; /* 11. Viền xám nhạt */
+}
+
+/* Thu nhỏ input/select trong hàng */
+.update-elevator-form .floor-row .form-input,
+.update-elevator-form .floor-row .form-select {
+  padding: 8px;
+  font-size: 0.9em;
+}
+
+/* Nút xóa hàng (Giữ nguyên, màu xám và đỏ vẫn ổn) */
+.update-elevator-form .delete-row-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+.update-elevator-form .delete-row-btn:hover {
+  color: #e74c3c;
+}
+
+/* Nút "Add floor" - ĐÃ THAY ĐỔI */
+.update-elevator-form .add-floor-btn {
+  background-color: #ffffff; /* 12. Nền trắng */
+  color: #6c757d; /* 13. Chữ xám */
+  border: 1px dashed #ced4da; /* 14. Viền xám nhạt, đứt nét */
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  width: auto;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.update-elevator-form .add-floor-btn:hover {
+  background-color: #f8f9fa; /* 15. Hover xám nhạt */
+}
+
+/* Nút "Update" (Giữ nguyên, màu xanh dương hợp với nền trắng) */
+.update-elevator-form .update-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+  clear: both; 
+}
+
+.update-elevator-form .update-btn:hover {
+  background-color: #2980b9;
+}
+
+/* CSS cho lỗi (Giữ nguyên, màu đỏ là chuẩn cho lỗi) */
+.update-elevator-form .error-message {
+  color: #e74c3c;
+  font-size: 0.85em;
+  margin-top: 6px;
+  display: block;
+}
+
+.update-elevator-form .input-error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}

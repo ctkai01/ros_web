@@ -1,36 +1,40 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import SetupNav from './SetupNav';
-import Maps from './Maps/Maps';
-import CreateMap from './Maps/CreateMap/CreateMap';
-import EditMaps from './Maps/EditMaps/EditMaps';
-import EditMapInfo from './Maps/EditMaps/EditMapInfo';
-import ViewMap from './Maps/ViewMap/ViewMap';
-import Missions from './Missions/Missions';
-import CreateMission from './Missions/CreateMission';
-import EditMission from './Missions/EditMission';
-import MissionDetail from './Missions/MissionDetail';
-import Footprints from './Footprints/Footprints';
-import Sites from './Maps/CreateMap/Sites/Sites';
-import CreateSite from './Maps/CreateMap/Sites/CreateSite';
-import EditSite from './Maps/CreateMap/Sites/EditSite';
-import Transitions from './Transitions/Transitions';
-import CreateTransition from './Transitions/CreateTransition';
-import EditTransition from './Transitions/EditTransition';
-import Groups from './Missions/Groups';
-import CreateGroup from './Missions/CreateGroup';
-import EditGroup from './Missions/EditGroup';
-import UserGroups from './UserGroups/UserGroups';
-import EditUserGroup from './UserGroups/EditUserGroup';
-import Users from './Users/Users';
-import EditUser from './Users/EditUser';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import SetupNav from "./SetupNav";
+import Maps from "./Maps/Maps";
+import CreateMap from "./Maps/CreateMap/CreateMap";
+import EditMaps from "./Maps/EditMaps/EditMaps";
+import EditMapInfo from "./Maps/EditMaps/EditMapInfo";
+import ViewMap from "./Maps/ViewMap/ViewMap";
+import Missions from "./Missions/Missions";
+import CreateMission from "./Missions/CreateMission";
+import EditMission from "./Missions/EditMission";
+import MissionDetail from "./Missions/MissionDetail";
+import Footprints from "./Footprints/Footprints";
+import Sites from "./Maps/CreateMap/Sites/Sites";
+import CreateSite from "./Maps/CreateMap/Sites/CreateSite";
+import EditSite from "./Maps/CreateMap/Sites/EditSite";
+import Transitions from "./Transitions/Transitions";
+import CreateTransition from "./Transitions/CreateTransition";
+import EditTransition from "./Transitions/EditTransition";
+import Groups from "./Missions/Groups";
+import CreateGroup from "./Missions/CreateGroup";
+import EditGroup from "./Missions/EditGroup";
+import UserGroups from "./UserGroups/UserGroups";
+import EditUserGroup from "./UserGroups/EditUserGroup";
+import Users from "./Users/Users";
+import EditUser from "./Users/EditUser";
 
-import './Setup.css';
-import Schedule from './Schedule/Schedule';
-import CreateSchedule from './Schedule/CreateSchedule';
-import { EditSchedule } from './Schedule';
-import { Robots } from './Robots';
-import DetailsRobot from './Robots/DetailsRobot';
+import "./Setup.css";
+import Schedule from "./Schedule/Schedule";
+import CreateSchedule from "./Schedule/CreateSchedule";
+import { EditSchedule } from "./Schedule";
+import Robots from "./Robots";
+import DetailsRobot from "./Robots/DetailsRobot";
+import Elevators from "./Elevators";
+import CreateElevator from "./Elevators/CreateElevator";
+import EditElevator from "./Elevators/EditElevator";
+import Sounds from "./Sounds";
 
 // Placeholder components for each setup section
 const Paths = () => <div>Paths Content</div>;
@@ -75,10 +79,16 @@ const Setup = ({ isNavOpen }) => {
 
           <Route path="robots" element={<Robots />} />
           <Route path="robots/:id" element={<DetailsRobot />} />
+
+          <Route path="elevators" element={<Elevators />} />
+          <Route path="elevators/create" element={<CreateElevator />} />
+          <Route path="elevators/edit/:id" element={<EditElevator />} />
+
+          <Route path="sounds" element={<Sounds />} />
         </Routes>
       </div>
     </div>
   );
 };
 
-export default Setup; 
+export default Setup;

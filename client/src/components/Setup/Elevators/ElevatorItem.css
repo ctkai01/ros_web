@@ -1,0 +1,98 @@
+/* Thẻ chính - ĐÃ THAY ĐỔI */
+.status-card {
+  width: 300px;
+  background-color: #ffffff; /* 1. Nền card màu trắng */
+  color: #333; /* 2. Màu chữ mặc định cho card là màu tối */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 3. Giảm độ đậm của shadow */
+  overflow: hidden;
+}
+
+/* Phần Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0; /* 4. Đường kẻ mờ hơn */
+}
+
+.header-left-elevator {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333; /* 5. Đảm bảo tiêu đề màu tối */
+}
+
+.card-status {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Màu cho các trạng thái (giữ nguyên) */
+.status-inactive {
+  color: #f39c12; /* Màu vàng */
+}
+.status-active {
+  color: #2ecc71; /* Màu xanh lá */
+}
+.status-error {
+  color: #e74c3c; /* Màu đỏ */
+}
+
+/* Nút Edit - ĐÃ THAY ĐỔI */
+.edit-button {
+  background-color: #f8f9fa; /* 6. Nền nút edit màu xám rất nhạt */
+  border: 1px solid #ced4da; /* 7. Viền nút edit */
+  color: #6c757d; /* 8. Màu icon/chữ trong nút */
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+  background-color: #e2e6ea; /* 9. Hover nút edit sáng hơn */
+}
+
+/* Phần Body */
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-key-elevator {
+  color: #6c757d; /* 10. Màu xám vừa cho key */
+}
+
+.info-value-elevator {
+  font-weight: 500;
+  color: #333; /* 11. Đảm bảo màu value là màu tối */
+}
+
+/* Phần Footer - ĐÃ THAY ĐỔI */
+.card-footer {
+  background-color: #f8f9fa; /* 12. Nền footer màu xám rất nhạt */
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #333; /* 13. Màu chữ footer màu tối */
+  border-top: 1px solid #e0e0e0; /* 14. Thêm đường kẻ trên footer */
+}
