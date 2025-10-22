@@ -1,0 +1,53 @@
+
+/* Layout Lưới */
+.settings-grid {
+  display: grid;
+  /* Tạo các cột tự động: 
+    - Mỗi cột có chiều rộng tối thiểu 250px.
+    - Tự động lấp đầy không gian (1fr).
+    - Tự động xuống hàng khi không đủ chỗ.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px; /* Khoảng cách giữa các thẻ */
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Thẻ Cài đặt (Theme Sáng) */
+.setting-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hiệu ứng khi di chuột */
+.setting-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon */
+.card-icon {
+  font-size: 3rem; /* 48px */
+  color: #3498db; /* Màu xanh dương */
+  margin-bottom: 1rem;
+}
+
+/* Tiêu đề */
+.card-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: bold;
+  color: #3498db; /* Màu xanh dương */
+  margin-bottom: 0.5rem;
+}
+
+/* Mô tả */
+.card-description {
+  font-size: 0.9rem;
+  color: #6c757d; /* Màu xám */
+}

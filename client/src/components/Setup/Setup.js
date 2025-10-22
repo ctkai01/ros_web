@@ -34,7 +34,7 @@ import DetailsRobot from "./Robots/DetailsRobot";
 import Elevators from "./Elevators";
 import CreateElevator from "./Elevators/CreateElevator";
 import EditElevator from "./Elevators/EditElevator";
-import Sounds from "./Sounds";
+import Sounds, { EditSound } from "./Sounds";
 
 // Placeholder components for each setup section
 const Paths = () => <div>Paths Content</div>;
@@ -85,6 +85,7 @@ const Setup = ({ isNavOpen }) => {
           <Route path="elevators/edit/:id" element={<EditElevator />} />
 
           <Route path="sounds" element={<Sounds />} />
+          <Route path="sounds/edit/:id" element={<EditSound />} />
         </Routes>
       </div>
     </div>

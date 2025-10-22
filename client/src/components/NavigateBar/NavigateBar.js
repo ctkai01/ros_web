@@ -65,7 +65,12 @@ const NavigateBar = ({ onLogout, onNavToggle }) => {
     }
 
     if (path === "/ai-features") {
-      return location.pathname.startsWith("/ai_-eatures");
+      return location.pathname.startsWith("/ai-features");
+    }
+
+
+    if (path === "/system") {
+      return location.pathname.startsWith("/system");
     }
     return location.pathname === path;
   };
@@ -81,7 +86,7 @@ const NavigateBar = ({ onLogout, onNavToggle }) => {
     { icon: DashboardIcon, label: "DASHBOARD", path: "/dashboard" },
     { icon: SetupIcon, label: "SETUP", path: "/setup" },
     { icon: MonitoringIcon, label: "MONITORING", path: "/monitoring" },
-    { icon: AIFeaturesIcon, label: "AI Features Lists", path: "/ai-features" },
+    { icon: AIFeaturesIcon, label: "AI LIST", path: "/ai-features" },
     { icon: SystemIcon, label: "SYSTEM", path: "/system" },
     { icon: HelpIcon, label: "HELP", path: "/help" },
     { icon: LogoutIcon, label: "LOGOUT", path: "/logout", onClick: onLogout },

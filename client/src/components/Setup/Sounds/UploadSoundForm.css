@@ -1,0 +1,119 @@
+/* Nội dung Modal (nền trắng) */
+.upload-form-content {
+  background-color: white;
+  /* padding: 24px; */
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
+  color: #333; /* Chữ đen/xám đậm */
+}
+
+/* Header Modal */
+.upload-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.upload-form-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+  color: #333;
+  width: 100%;
+  text-align: center
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Body Modal (chứa form) */
+.upload-form-body .form-group {
+  margin-bottom: 20px;
+}
+
+.upload-form-body .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Ô input chung */
+.upload-form-body .form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Quan trọng */
+}
+
+/* Style riêng cho ô File Input */
+.file-input-wrapper {
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.file-input-wrapper:hover {
+  border-color: #3498db;
+}
+.file-input-wrapper span {
+  color: #666;
+  font-size: 0.9em;
+}
+/* Ẩn input file gốc */
+.upload-form-body input[type="file"] {
+  display: none;
+}
+.file-name-display {
+  margin-top: 10px;
+  font-style: italic;
+  color: #333;
+}
+
+/* Footer Modal */
+.upload-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Nút bấm chung */
+.upload-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #666;
+}
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+.btn-primary {
+  background-color: #3498db; /* Màu xanh dương */
+  color: white;
+  border-color: #3498db;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+}

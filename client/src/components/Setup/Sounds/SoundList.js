@@ -1,6 +1,12 @@
 import React from "react";
 // Import các icons cần thiết
-import { FaPlayCircle, FaPen, FaHeadphones, FaTimes } from "react-icons/fa";
+import {
+  FaPlayCircle,
+  FaPen,
+  FaHeadphones,
+  FaTimes,
+  FaRegEye,
+} from "react-icons/fa";
 import "./SoundList.css";
 // Dữ liệu mẫu
 const soundData = [
@@ -42,7 +48,7 @@ const soundData = [
   },
 ];
 
-const SoundList = () => {
+const SoundList = ({ handleUpdateSound }) => {
   return (
     <div className="sound-list-container">
       {/* Header */}
@@ -72,21 +78,21 @@ const SoundList = () => {
 
           {/* Functions */}
           <div className="sound-functions">
-            {/* Hiển thị nút Edit hoặc nút Listen (Headphones) */}
-            {sound.editable ? (
-              <button className="function-btn">
-                <FaPen size={14} />
-              </button>
-            ) : (
-              <button className="function-btn">
-                <FaHeadphones size={14} />
-              </button>
-            )}
-
             {/* Nút Listen/Headphones thứ 2 (tùy chỉnh) */}
             <button className="function-btn">
               <FaHeadphones size={14} />
             </button>
+
+            {/* Hiển thị nút Edit hoặc nút Listen (Headphones) */}
+            {sound.editable ? (
+              <button className="function-btn" onClick={() => handleUpdateSound(sound.id)}>
+                <FaPen size={14} />
+              </button>
+            ) : (
+              <button className="function-btn">
+                <FaRegEye size={14} />
+              </button>
+            )}
 
             {/* Nút Delete */}
             <button

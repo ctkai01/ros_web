@@ -1,0 +1,755 @@
+.detail-edit-sound-private-container {
+  /* height: calc(100vh - 60px); */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.detail-edit-sound-private-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-edit-sound-private-header-left {
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+}
+.detail-edit-sound-private-header-left-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-edit-sound-private-header-left h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.detail-edit-sound-private-subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.detail-edit-sound-private-info-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #666;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: help;
+}
+
+.detail-edit-sound-private-create-btn {
+  padding: 8px 16px;
+  background: #8bc34a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.detail-edit-sound-private-create-btn:hover {
+  background: #7cb342;
+}
+
+.detail-edit-sound-private-content {
+  flex: 1;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-edit-sound-private-filters {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detail-edit-sound-private-filter-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-edit-sound-private-filter-dropdown span {
+  color: #666;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.detail-edit-sound-private-filter-dropdown select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+}
+
+.detail-edit-sound-private-create-edit-groups-btn {
+  padding: 0 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.detail-edit-sound-private-create-edit-groups-btn:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.detail-edit-sound-private-main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Remove detail-edit-sound-filter-section since it's now part of detail-edit-sound-private-filters */
+
+.detail-edit-sound-content-wrapper {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.detail-edit-sound-private-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  border-radius: 4px;
+  padding: 0px 15px 15px 15px;
+  flex: 2;
+  min-height: 400px;
+}
+
+.detail-edit-sound-private-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  gap: 12px;
+  height: 36px;
+}
+
+.detail-edit-sound-private-item:hover {
+  background: #f9f9f9;
+}
+
+.detail-edit-sound-private-icon {
+  width: 32px;
+  height: 32px;
+  background: #8bc34a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-edit-sound-private-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.detail-edit-sound-private-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.detail-edit-sound-private-name {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detail-edit-sound-private-site {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.detail-edit-sound-private-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Standard size for all action buttons */
+.detail-edit-sound-private-actions button,
+.detail-edit-sound-private-actions .detail-edit-sound-private-edit-btn,
+.detail-edit-sound-private-actions .detail-edit-sound-private-delete-btn,
+.detail-edit-sound-private-actions .detail-edit-sound-private-details-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+/* .detail-edit-sound-private-actions .detail-edit-sound-private-edit-btn {
+  background-image: url("../../../../public/assets/icons/pencil.png");
+} */
+
+.detail-edit-sound-private-actions .detail-edit-sound-private-edit-btn:hover {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+/* .detail-edit-sound-private-actions .detail-edit-sound-private-delete-btn {
+  background-image: url("../../../../public/assets/icons/delete-white.png");
+  background-color: #f44336;
+} */
+
+.detail-edit-sound-private-actions .detail-edit-sound-private-delete-btn:hover {
+  background-color: #e53935;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.2);
+}
+
+/* .detail-edit-sound-private-actions .detail-edit-sound-private-details-btn {
+  background-image: url("../../../../public/assets/icons/view.png");
+} */
+
+.detail-edit-sound-private-actions .detail-edit-sound-private-details-btn:hover {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+/* Hover states */
+.detail-edit-sound-private-actions button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-edit-sound-private-actions button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Specific hover states */
+.detail-edit-sound-private-actions .detail-edit-sound-private-edit-btn:hover {
+  border-color: #2196f3;
+  background-color: #e3f2fd;
+  background-size: 20px;
+}
+
+.detail-edit-sound-private-actions .detail-edit-sound-private-delete-btn:hover {
+  border-color: #f44336;
+  background-color: #ffebee;
+  background-size: 20px;
+}
+
+.detail-edit-sound-private-actions .detail-edit-sound-private-copy-btn:hover {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+  background-size: 20px;
+}
+
+.detail-edit-sound-private-queue {
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  min-width: 250px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 220px);
+}
+
+.detail-edit-sound-private-queue h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.detail-edit-sound-private-queue-status {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.detail-edit-sound-private-queue-empty {
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Embed container for detail-edit-soundQueueWidgetComponent */
+.detail-edit-sound-private-queue-embed {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  min-height: 200px;
+}
+
+.detail-edit-sound-private-queue-embed .detail-edit-sound-queue-widget.display-mode {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-edit-sound-private-queue-embed .detail-edit-sound-queue-widget .queue-content {
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.detail-edit-sound-private-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #666;
+}
+
+.detail-edit-sound-private-error {
+  color: #f44336;
+  text-align: center;
+  padding: 20px;
+}
+
+.detail-edit-sound-private-no-detail-edit-sound {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.detail-edit-sound-private-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  min-width: 200px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.detail-edit-sound-private-select:hover {
+  border-color: #8bc34a;
+}
+
+.detail-edit-sound-private-select:focus {
+  border-color: #8bc34a;
+  box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.1);
+}
+
+.detail-edit-sound-private-select option {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.detail-edit-sound-private-form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.detail-edit-sound-private-form-group {
+  margin-bottom: 20px;
+}
+
+.detail-edit-sound-private-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.detail-edit-sound-private-form-group input,
+.detail-edit-sound-private-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.detail-edit-sound-private-form-group input:focus,
+.detail-edit-sound-private-form-group select:focus {
+  border-color: #8bc34a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.1);
+}
+
+.detail-edit-sound-private-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.detail-edit-sound-private-select-container {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-edit-sound-private-select-container select {
+  flex: 1;
+}
+
+.detail-edit-sound-private-create-edit-btn {
+  padding: 0 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.detail-edit-sound-private-create-edit-btn:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.detail-edit-sound-private-form-actions {
+  display: flex;
+  /* justify-content: flex-end; */
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.detail-edit-sound-private-cancel-btn,
+.detail-edit-sound-private-submit-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detail-edit-sound-private-cancel-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.detail-edit-sound-private-cancel-btn:hover {
+  background: #eee;
+}
+
+.detail-edit-sound-private-submit-btn {
+  background: #8bc34a;
+  border: none;
+  color: white;
+}
+
+.detail-edit-sound-private-submit-btn:hover {
+  background: #7cb342;
+}
+
+.detail-edit-sound-private-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.detail-edit-sound-private-error-message {
+  color: #f44336;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.detail-edit-sound-private-back-btn {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* .detail-edit-sound-private-back-btn::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../../public/assets/icons/previous.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+.detail-edit-sound-private-back-btn:hover {
+  background: #eee;
+}
+
+.detail-edit-sound-private-submit-btn {
+  padding: 8px 16px;
+  background: #8bc34a;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .detail-edit-sound-private-submit-btn::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../../public/assets/icons/check.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+} */
+
+.detail-edit-sound-private-cancel-btn {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .detail-edit-sound-private-cancel-btn::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../../public/assets/icons/previous.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+.detail-edit-sound-private-create-edit-btn {
+  padding: 0 12px;
+  height: 36px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .detail-edit-sound-private-create-edit-btn::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-image: url("../../../../public/assets/icons/pencil.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+.timeline-hour {
+  color: #5d9cec;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Thẻ nhiệm vụ */
+.detail-edit-sound-card {
+  background-color: #1e1e1e; /* Nền đen cho phần body */
+  border: 1px solid #333;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  /* max-width: 800px; */
+  width: 100%;
+  overflow: hidden; /* Quan trọng để bo góc header */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header của thẻ */
+.detail-edit-sound-header {
+  background-color: #0d4761; /* Nền xanh đậm */
+  color: #e0e0e0;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.detail-edit-sound-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa icon và chữ */
+}
+
+.detail-edit-sound-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Khoảng cách giữa các icon hành động */
+  cursor: pointer;
+}
+
+/* Body của thẻ */
+.detail-edit-sound-body {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Tạo layout 2 cột */
+  gap: 15px 120px; /* Khoảng cách dọc và ngang */
+}
+
+.info-item {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-key {
+  color: #5d9cec !important; /* Màu xanh cho key */
+  font-size: 0.9em;
+  /* margin-bottom: 5px; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.info-value {
+  color: #dcdcdc !important; /* Màu trắng xám cho value */
+  font-size: 0.95em;
+}
+
+.detail-edit-sound-card-container {
+  display: flex;
+}
+
+.box-arrows {
+  background-color: #0d4761;
+  padding: 10px 10px;
+  max-height: fit-content;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  cursor: pointer;
+}
+
+.detail-edit-sound-card-wrapper {
+  margin-bottom: 15px;
+}
+
+/* .header-actions .edit-sound-action-btn {
+  padding: 10px 12px;
+  display: flex;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-actions .edit-sound-action-btn.scan-edit-sound-btn, .header-actions .edit-sound-action-btn.add-edit-sound-btn  {
+  background-color: #3498db;
+}
+
+.header-actions .edit-sound-action-btn.scan-ranges-btn, .header-actions .edit-sound-action-btn.edit-sound-group-btn  {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #000;
+} */
+
+.header-actions .edit-sound-action-btn {
+  padding: 10px 12px;
+  display: flex;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;  
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-actions .edit-sound-action-btn.go-back-edit-sounds-btn {
+   background-color: #fff;
+  color: #666;
+  border: 1px solid #000;
+}
+
+
+.header-actions .edit-sound-action-btn.go-back-edit-sounds-btn:hover {
+   background-color: #f2f2f2;
+}
+
+.page-header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.edit-sound-list {
+  display: flex;
+  gap: 15px;
+}

@@ -1,0 +1,119 @@
+/* Thẻ form chính - ĐÃ THAY ĐỔI */
+.edit-sound-form {
+  background-color: #ffffff; /* 1. Nền trắng */
+  padding: 2rem;
+  border-radius: 8px;
+  /* max-width: 700px; */
+  border: 1px solid #dee2e6; /* 2. Thêm viền xám nhạt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 3. Shadow nhẹ */
+}
+
+/* Nhóm form (label + input) */
+.edit-sound-form .form-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.edit-sound-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555; /* 4. Chữ xám đậm */
+}
+
+/* Đổi màu icon 'i' cho phù hợp */
+.edit-sound-form .form-group label svg {
+  color: #999;
+}
+
+/* Layout 2 cột */
+.edit-sound-form .form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Style chung cho input - ĐÃ THAY ĐỔI */
+.edit-sound-form .form-input {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff; /* 5. Nền input trắng */
+  border: 1px solid #ced4da; /* 6. Viền xám nhạt */
+  border-radius: 6px;
+  color: #333; /* 7. Chữ gõ vào màu đen */
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.edit-sound-form .form-input::placeholder {
+  color: #999; /* 8. Placeholder xám nhạt */
+}
+
+/* Thêm hiệu ứng focus cho nền sáng */
+.edit-sound-form .form-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Khu vực chứa các nút */
+.edit-sound-form  .form-edit-sound-actions {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Style chung cho nút */
+.edit-sound-form .edit-sound-action-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Nút "Save" (Xanh dương - Giữ nguyên) */
+.edit-sound-form .edit-sound-btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+.edit-sound-form .edit-sound-btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Nút "Delete" (Đỏ - Giữ nguyên) */
+.edit-sound-form .edit-sound-btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+.edit-sound-form .edit-soundbtn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Các nút "Cancel", "Listen" (Xám nhạt) - ĐÃ THAY ĐỔI */
+.edit-sound-form .edit-sound-btn-secondary {
+  background-color: #fff; /* 9. Nền trắng */
+  color: #666; /* 10. Chữ xám */
+  border: 1px solid #ccc; /* 11. Viền xám */
+}
+.edit-sound-form .edit-sound-btn-secondary:hover {
+  background-color: #f2f2f2; /* 12. Hover xám nhạt */
+}
+
+/* CSS cho lỗi (Giữ nguyên, màu đỏ là chuẩn cho lỗi) */
+.edit-sound-form .error-message {
+  color: #e74c3c;
+  font-size: 0.85em;
+  margin-top: 6px;
+  display: block;
+}
+.edit-sound-form .input-error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}

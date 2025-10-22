@@ -1,0 +1,140 @@
+/* Container chính của danh sách */
+.collision-avoidance-form {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  /* max-width: 800px; */
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Mỗi hàng cài đặt */
+.collision-avoidance-form .collision-avoidance-form-setting-row {
+  display: flex;
+  justify-content: space-between; /* Đẩy 2 phần tử con ra 2 phía */
+  align-items: flex-start; /* Căn lề trên cùng */
+  padding: 1.5rem; /* 24px */
+  border-bottom: 1px solid #e9ecef; /* Đường kẻ ngang mờ */
+}
+/* Bỏ đường kẻ ở hàng cuối cùng */
+.collision-avoidance-form .collision-avoidance-form-setting-row:last-child {
+  border-bottom: none;
+}
+
+/* Phần bên trái: Tiêu đề và Mô tả */
+.collision-avoidance-form .collision-avoidance-form-setting-info {
+  flex: 2; /* Chiếm 2/3 không gian */
+  padding-right: 1.5rem;
+}
+
+.collision-avoidance-form .collision-avoidance-form-setting-label {
+  font-size: 1rem; /* 16px */
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.collision-avoidance-form .collision-avoidance-form-setting-description {
+  font-size: 0.9em;
+  color: #6c757d; /* Màu xám */
+  margin: 0;
+}
+
+/* Phần bên phải: Input và Nút Restore */
+.collision-avoidance-form .collision-avoidance-form-setting-control {
+  flex: 1; /* Chiếm 1/3 không gian */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px; /* Căn chỉnh với tiêu đề */
+}
+
+/* Style chung cho input và select */
+.collision-avoidance-form .collision-avoidance-form-setting-input,
+.collision-avoidance-form .collision-avoidance-form-setting-select {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  color: #333;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Nút Restore default */
+.collision-avoidance-form .collision-avoidance-form-restore-btn {
+  background: none;
+  border: none;
+  color: #3498db; /* Màu xanh dương */
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap; /* Không xuống hàng */
+}
+.collision-avoidance-form .collision-avoidance-form-restore-btn:hover {
+  text-decoration: underline;
+}
+
+.collision-avoidance-form .collision-avoidance-form-error-message {
+  color: #e74c3c; /* Màu đỏ */
+  font-size: 0.8em;
+  /* Hiển thị lỗi ngay bên dưới phần mô tả */
+  display: block;
+  margin-top: 8px;
+}
+
+/* Thêm viền đỏ cho input/select khi có lỗi */
+.collision-avoidance-form .collision-avoidance-form-input-error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}
+
+/* --- Lớp CƠ SỞ cho các nút bấm --- */
+.collision-avoidance-form-action-btn {
+  /* Kích thước & Khoảng cách */
+  padding: 10px 20px;
+
+  /* Chữ & Phông */
+  font-size: 0.9rem; /* 14.4px */
+  font-weight: bold;
+
+  /* Giao diện */
+  border: 1px solid transparent; /* Đặt border trong suốt để giữ kích thước ổn định */
+  border-radius: 6px;
+
+  /* Tương tác */
+  cursor: pointer;
+  transition: all 0.2s ease; /* Hiệu ứng chuyển động mượt */
+
+  /* Layout bên trong (cho icon + chữ) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* --- Lớp ĐIỀU CHỈNH cho nút chính (Primary) --- */
+.collision-avoidance-form-btn-primary {
+  background-color: #3498db; /* Nền xanh dương */
+  color: white;
+  border-color: #3498db;
+}
+
+/* Hiệu ứng khi di chuột vào nút Primary */
+.collision-avoidance-form-btn-primary:hover {
+  background-color: #2980b9; /* Màu xanh đậm hơn */
+  border-color: #2980b9;
+}
+
+.collision-avoidance-form-btn-cancel {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #000;
+}
+
+/* Hiệu ứng khi di chuột vào nút Primary */
+.collision-avoidance-form-btn-cancel:hover {
+  background-color: #f2f2f2;
+}

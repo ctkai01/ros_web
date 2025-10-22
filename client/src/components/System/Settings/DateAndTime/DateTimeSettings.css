@@ -1,0 +1,124 @@
+
+/* Container chính */
+.datetime-settings {
+  display: flex;
+  gap: 2rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* max-width: 900px; */
+}
+
+/* Cột bên trái (Form) */
+.datetime-settings-form {
+  flex: 1; /* Chiếm 1 phần */
+}
+
+/* Cột bên phải (Hiển thị) */
+.datetime-display-panel {
+  flex: 1; /* Chiếm 1 phần */
+  border-left: 1px solid #e9ecef;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Nhóm form (Date, Time) */
+.datetime-form-group {
+  margin-bottom: 24px;
+}
+
+.datetime-form-label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Hàng chứa các dropdown */
+.datetime-select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.datetime-select-row span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.datetime-form-select {
+  flex: 1; /* Các dropdown tự chia sẻ không gian */
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Khu vực nút bấm */
+.datetime-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+/* Nút bấm chung */
+.datetime-action-btn {
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Nút "Save changes" (Xanh dương) */
+.datetime-btn-primary {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+.datetime-btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Nút "Load from device" (Trắng) */
+.datetime-btn-secondary {
+  background-color: #fff;
+  color: #666;
+  border-color: #ccc;
+}
+.datetime-btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+/* --- Style cho cột bên phải --- */
+.datetime-display-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.datetime-display-date {
+  font-size: 1.5rem; /* 24px */
+  color: #3498db; /* Màu xanh dương */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.datetime-display-time {
+  font-size: 3.5rem; /* 56px */
+  font-weight: 300; /* Nét mỏng */
+  color: #333;
+  letter-spacing: 2px;
+}

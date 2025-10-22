@@ -14,6 +14,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import { MissionProvider } from "./contexts/MissionContext";
 import "./App.css";
 import AIFeatures from "./components/AIFeatures";
+import System from "./components/System";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
@@ -143,6 +144,10 @@ function App() {
                   <Route
                     path="/ai-features/*"
                     element={<AIFeatures isNavOpen={isNavOpen} />}
+                  />
+                  <Route
+                    path="/system/*"
+                    element={<System isNavOpen={isNavOpen} />}
                   />
                   <Route
                     path="/setup/*"

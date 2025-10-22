@@ -4,25 +4,38 @@ import { GrClear } from "react-icons/gr";
 import { FaPlus, FaCloudUploadAlt } from "react-icons/fa";
 import SoundList from "./SoundList";
 import "./Sounds.css";
+import Modal from "../../common/Modal";
+import UploadSoundForm from "./UploadSoundForm";
 
 const Sounnds = () => {
   const [searchFilter, setSearchFilter] = useState("");
-
+  const [isUploadSoundsModalOpen, setIsUploadSoundsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 1;
 
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleEditClick = (id) => {
-    navigate(`/setup/elevators/edit/${id}`);
+  const handleUpdateSound = (id) => {
+    navigate(`/setup/sounds/edit/${id}`);
   };
-  const handleCreateElevator = () => {
-    // Logic to create a new elevator
-    navigate("/setup/elevators/create");
+
+  const handleUpload = (data) => {
+    console.log("Uploading data:", data);
+    // ... xử lý logic upload ...
+    setIsModalOpen(false); // Đóng modal
   };
   return (
     <div className="detail-sounds-private-container">
+      <Modal
+        isOpen={isUploadSoundsModalOpen}
+        onClose={() => setIsUploadSoundsModalOpen(false)}
+      >
+        <UploadSoundForm
+          onClose={() => setIsUploadSoundsModalOpen(false)}
+          onUpload={handleUpload}
+        />
+      </Modal>
       <div className="page-header">
         <div className="header-title">
           <h2>Sounds</h2>
@@ -31,16 +44,13 @@ const Sounnds = () => {
         <div className="header-actions">
           <button
             className="sounds-action-btn upload-sounds-btn"
-            onClick={handleCreateElevator}
+            onClick={() => setIsUploadSoundsModalOpen(true)}
           >
             <FaCloudUploadAlt />
             Upload sound
           </button>
 
-          <button
-            className="sounds-action-btn clear-filter-btn"
-            onClick={handleCreateElevator}
-          >
+          <button className="sounds-action-btn clear-filter-btn">
             <GrClear />
             Clear filter
           </button>
@@ -102,7 +112,7 @@ const Sounnds = () => {
           </div>
         </div>
         <div className="sounds-private-main-content">
-          <SoundList />
+          <SoundList handleUpdateSound={handleUpdateSound}/>
         </div>
       </div>
     </div>
